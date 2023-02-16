@@ -49,7 +49,7 @@
       </div>
       <div class="game">
         <h2>Ring Toss</h2>
-        <img src="https://www.example.com/ringtoss.jpg" alt="Ring Toss">
+        <img src="https://static.wixstatic.com/media/0fa92a967c76420a83938ecadb5ba4f2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Client%202.png" alt="Ring Toss">
         <p>Try to toss the ring onto the bottle!</p>
         <button onclick="alert('You got the ring on the bottle!')">Play</button>
       </div>
