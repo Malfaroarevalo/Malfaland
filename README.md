@@ -43,7 +43,7 @@
     <div id="main">
       <div class="game">
         <h2>Dunk Tank</h2>
-        <img src="https://www.example.com/dunktank.jpg" alt="Dunk Tank">
+        <img src="https://static.wixstatic.com/media/0fa92a967c76420a83938ecadb5ba4f2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Client%202.png" alt="Dunk Tank">
         <p>Test your aim by dunking the clown!</p>
         <button onclick="alert('You dunked the clown!')">Play</button>
       </div>
