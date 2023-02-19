@@ -1,12 +1,19 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Body styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #f2f2f2;
-  margin: 0;
 }
 
+/* Header styles */
 .header {
-  background-color: #555;
+  background-color: #003366;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -15,8 +22,10 @@ body {
 .header h1 {
   margin: 0;
   font-size: 36px;
+  text-transform: uppercase;
 }
 
+/* Main styles */
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -35,14 +44,18 @@ body {
 
 .card h2 {
   margin-top: 0;
+  font-size: 24px;
+  color: #003366;
 }
 
 .card p {
   margin: 10px 0;
+  color: #333;
 }
 
+/* Skills styles */
 .skills {
-  background-color: #555;
+  background-color: #003366;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -51,6 +64,7 @@ body {
 .skills h2 {
   margin: 0;
   font-size: 24px;
+  text-transform: uppercase;
 }
 
 .skills ul {
@@ -68,72 +82,55 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   margin: 10px;
   padding: 10px;
-
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
+  color: #333;
 }
 
-.header {
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
+/* Education styles */
+.education {
+  margin-top: 20px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 36px;
+.education h2 {
+  margin-bottom: 10px;
+  color: #003366;
 }
 
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-.card p {
-  margin: 10px 0;
-}
-
-.skills {
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.skills h2 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.skills ul {
+.education ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.skills li {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 10px;
+.education li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.education li span {
+  font-weight: bold;
+}
+
+/* Work experience styles */
+.work {
+  margin-top: 20px;
+}
+
+.work h2 {
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.work ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.work li span {
+  font-weight: bold;
+}
