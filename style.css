@@ -34,12 +34,10 @@ body {
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
   padding: 20px;
-  width: 300px;
 }
 
 .card h2 {
@@ -55,6 +53,9 @@ body {
 
 /* Skills styles */
 .skills {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
   padding: 20px;
 }
 
@@ -80,7 +81,10 @@ body {
 
 /* Education styles */
 .education {
-  margin-top: 20px;
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
 .education h2 {
@@ -105,7 +109,10 @@ body {
 
 /* Work experience styles */
 .work {
-  margin-top: 20px;
+    background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
 .work h2 {
