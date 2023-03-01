@@ -1,37 +1,35 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 5%;
 }
 
 .header {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
+  background-color: #f2f2f2;
+  color: #fff;
+  text-align: left;
+  flex-wrap: wrap;
 }
 
 .header h1 {
   margin: 0;
   font-size: 36px;
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
+}
+.header h2 {
+  margin: 1;
+  font-size: 26px;
+  justify-content: center;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #656D78;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px 0 rgba(101,109,120);
   margin: 10px;
   padding: 20px;
-  width: 300px;
+  width: 90%;
 }
 
 .card h2 {
@@ -42,31 +40,6 @@ body {
   margin: 10px 0;
 }
 
-.skills {
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.skills h2 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.skills ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.skills li {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  padding: 10px;
+.card li {
+  margin: -3px 0;
 }
