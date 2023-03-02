@@ -1,8 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 5%;
+  --bs-body-font-family: var(--bs-font-monospace);
+  --bs-body-line-height: 1.4;
+  --bs-body-bg: var(--bs-gray-100);
 }
 
 .header {
