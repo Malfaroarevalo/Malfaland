@@ -1,44 +1,10 @@
 body {
-  --bs-body-font-family: var(--bs-font-monospace);
-  --bs-body-line-height: 1.4;
-  --bs-body-bg: var(--bs-gray-100);
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-.header {
-  background-color: #f2f2f2;
-  color: #fff;
-  text-align: left;
-  flex-wrap: wrap;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 36px;
-  justify-content: center;
-}
-.header h2 {
-  margin: 1;
-  font-size: 26px;
-  justify-content: center;
-}
-
-.card {
-  background-color: #656D78;
-  border-radius: 9px;
-  box-shadow: 0 4px 8px 0 rgba(101,109,120);
-  margin: 10px;
-  padding: 20px;
-  width: 90%;
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-.card p {
-  margin: 10px 0;
-}
-
-.card li {
-  margin: -3px 0;
+button {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
 }
