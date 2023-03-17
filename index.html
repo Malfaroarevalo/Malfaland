@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Counter Game</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lightbulb Portfolio</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .lightbulb {
+    width: 100px;
+    height: 100px;
+  }
+  .lightbulb path {
+    transition: fill 0.5s;
+  }
+  .on .lightbulb path {
+    fill: yellow;
+  }
+  button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
-    <h1>Click Counter Game</h1>
-    <p>Click the button as many times as you can within 10 seconds!</p>
-    <button id="clickButton">Click me!</button>
-    <p>Time remaining: <span id="time">10</span> seconds</p>
-    <p>Clicks: <span id="clicks">0</span></p>
-    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+  <div class="lightbulb-container">
+    <svg class="lightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.33.26 2.61.74 3.77.1.24.26.45.45.65L12 22l8.8-5.58c.2-.2.36-.41.46-.65C21.74 14.61 22 13.33 22 12c0-5.52-4.48-10-10-10zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+    </svg>
+  </div>
+  <button id="toggleBtn">Toggle On/Off</button>
+
+  <script>
+    const lightbulbContainer = document.querySelector('.lightbulb-container');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+      lightbulbContainer.classList.toggle('on');
+    });
+  </script>
 </body>
 </html>
