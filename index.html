@@ -32,6 +32,18 @@
             onGround: false
         };
 
+        const enemies = [
+            { x: 200, y: canvas.height - 80, width: 20, height: 20 },
+            { x: 350, y: canvas.height - 80, width: 20, height: 20 },
+            { x: 500, y: canvas.height - 80, width: 20, height: 20 }
+        ];
+
+        const trees = [
+            { x: 100, y: canvas.height - 150, width: 40, height: 100 },
+            { x: 400, y: canvas.height - 150, width: 40, height: 100 },
+            { x: 700, y: canvas.height - 150, width: 40, height: 100 }
+        ];
+
         function drawPlayer() {
             ctx.fillStyle = 'red';
             ctx.fillRect(player.x, player.y, player.width, player.height);
@@ -40,6 +52,20 @@
         function drawGround() {
             ctx.fillStyle = 'green';
             ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
+        }
+
+        function drawEnemies() {
+            ctx.fillStyle = 'purple';
+            enemies.forEach(enemy => {
+                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+            });
+        }
+
+        function drawTrees() {
+            ctx.fillStyle = 'brown';
+            trees.forEach(tree => {
+                ctx.fillRect(tree.x, tree.y, tree.width, tree.height);
+            });
         }
 
         function update() {
@@ -57,7 +83,9 @@
         function gameLoop() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawGround();
+            drawTrees();
             drawPlayer();
+            drawEnemies();
             update();
             requestAnimationFrame(gameLoop);
         }
