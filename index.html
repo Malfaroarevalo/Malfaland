@@ -45,7 +45,7 @@
         document.getElementById("magicButton").addEventListener("click", function() {
             const colors = ["#6a11cb", "#2575fc", "#FF5733", "#DAF7A6", "#FFC300"];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
+            document.querySelector(".main-container").style.background = randomColor;
         });
     </script>
 </body>
