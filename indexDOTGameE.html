@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El juego más increíble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background: #6a11cb;
+            color: white;
+        }
+        .world-element {
+            position: absolute;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        .world-element.active {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FFC300;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="world-element" id="floraFauna" style="top: 10%; left: 10%;">Flora y Fauna</div>
+    <div class="world-element" id="characterGrowth" style="top: 10%; right: 10%;">Crecimiento del personaje</div>
+    <div class="world-element" id="evolutionaryWorld" style="bottom: 10%; left: 10%;">Mundo evolutivo</div>
+    <div class="world-element" id="companionCharacters" style="bottom: 10%; right: 10%;">Personajes acompañantes</div>
+    <div class="dot" id="dot"></div>
+
+    <script>
+        const dot = document.getElementById('dot');
+        let dotX = 0;
+        let dotY = 0;
+
+        function moveDot(e) {
+            const step = 5;
+            switch (e.key) {
+                case 'ArrowUp':
+                    dotY -= step;
+                    break;
+                case 'ArrowDown':
+                    dotY += step;
+                    break;
+                case 'ArrowLeft':
+                    dotX -= step;
+                    break;
+                case 'ArrowRight':
+                    dotX += step;
+                    break;
+            }
+            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+
+            checkDotPosition();
+        }
+
+        function checkDotPosition() {
+            const worldElements = document.querySelectorAll('.world-element');
+            worldElements.forEach(element => {
+                const elementRect = element.getBoundingClientRect();
+                const dotRect = dot.getBoundingClientRect();
+
+                if (
+                    dotRect.top > elementRect.top &&
+                    dotRect.bottom < elementRect.bottom &&
+                    dotRect.left > elementRect.left &&
+                    dotRect.right < elementRect.right
+                ) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('keydown', moveDot);
+    </script>
+</body>
+</html>
