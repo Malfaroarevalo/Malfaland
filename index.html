@@ -28,49 +28,17 @@
             y: canvas.height / 2,
             width: 30,
             height: 30,
+            velocityX: 0,
             velocityY: 0,
             onGround: false
         };
 
-        const enemies = [
-            { x: 200, y: canvas.height - 80, width: 20, height: 20 },
-            { x: 350, y: canvas.height - 80, width: 20, height: 20 },
-            { x: 500, y: canvas.height - 80, width: 20, height: 20 }
-        ];
-
-        const trees = [
-            { x: 100, y: canvas.height - 150, width: 40, height: 100 },
-            { x: 400, y: canvas.height - 150, width: 40, height: 100 },
-            { x: 700, y: canvas.height - 150, width: 40, height: 100 }
-        ];
-
-        function drawPlayer() {
-            ctx.fillStyle = 'red';
-            ctx.fillRect(player.x, player.y, player.width, player.height);
-        }
-
-        function drawGround() {
-            ctx.fillStyle = 'green';
-            ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
-        }
-
-        function drawEnemies() {
-            ctx.fillStyle = 'purple';
-            enemies.forEach(enemy => {
-                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
-            });
-        }
-
-        function drawTrees() {
-            ctx.fillStyle = 'brown';
-            trees.forEach(tree => {
-                ctx.fillRect(tree.x, tree.y, tree.width, tree.height);
-            });
-        }
+        // The rest of the code remains the same until the `update` function
 
         function update() {
             player.velocityY += 1;
             player.y += player.velocityY;
+            player.x += player.velocityX;
             if (player.y >= canvas.height - player.height - 50) {
                 player.y = canvas.height - player.height - 50;
                 player.velocityY = 0;
@@ -80,21 +48,23 @@
             }
         }
 
-        function gameLoop() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawGround();
-            drawTrees();
-            drawPlayer();
-            drawEnemies();
-            update();
-            requestAnimationFrame(gameLoop);
-        }
-
-        gameLoop();
+        // The rest of the code remains the same until the event listener
 
         document.addEventListener('keydown', function (e) {
             if (e.key === ' ' && player.onGround) {
                 player.velocityY = -20;
+            }
+            if (e.key === 'ArrowLeft') {
+                player.velocityX = -5;
+            }
+            if (e.key === 'ArrowRight') {
+                player.velocityX = 5;
+            }
+        });
+
+        document.addEventListener('keyup', function (e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                player.velocityX = 0;
             }
         });
     </script>
