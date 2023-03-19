@@ -1,23 +1,94 @@
-!DOCTYPE html>
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-
-<title>Mandelbrot Set Animation</title>
-
-<style> \#canvas { border: 1px solid black; } </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot Set</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-
-<canvas id="canvas" width="800" height="800"></canvas>
-
-<script> const canvas = document.getElementById("canvas"); const ctx = canvas.getContext("2d"); const width = canvas.width; const height = canvas.height; const maxIterations = 5000; let xMin = -2.5; let yMin = -1.5; let xMax = 1; let yMax = 1.5; let isZooming = false; &#x200B; function calculateMandelbrot(x, y) { let zx = 0; let zy = 0; let i = 0; while (zx \* zx + zy \* zy < 4 && i < maxIterations) { const tempX = zx \* zx - zy \* zy + x; zy = 2 \* zx \* zy + y; zx = tempX; i++; } return i; } &#x200B; function drawMandelbrot() { for (let x = 0; x < width; x++) { for (let y = 0; y < height; y++) { const real = xMin + (x / width) \* (xMax - xMin); const imaginary = yMin + (y / height) \* (yMax - yMin); const iterations = calculateMandelbrot(real, imaginary); const hue = iterations / maxIterations; const saturation = 1; const lightness = iterations < maxIterations ? 0.5 : 0; ctx.fillStyle = \`hsl(${hue \* 360}, ${saturation \* 100}%, ${lightness \* 100}%)\`; ctx.fillRect(x, y, 1, 1); } } } &#x200B; function zoomIn() { if (isZooming) { return; } isZooming = true; const zoomFactor = 1.5; const zoomCenterX = -0.75; const zoomCenterY = 0.1; const zoomIterations = 50; let zoomCounter = 0; const xMinStart = xMin; const yMinStart = yMin; const xMaxStart = xMax; const yMaxStart = yMax; const zoomInterval = setInterval(() => { xMin = zoomCenterX - (xMax - xMin) / zoomFactor / 2; xMax = zoomCenterX + (xMax - xMin) / zoomFactor / 2; yMin = zoomCenterY - (yMax - yMin) / zoomFactor / 2; yMax = zoomCenterY + (yMax - yMin) / zoomFactor / 2; zoomCounter++; if (zoomCounter >= zoomIterations) { clearInterval(zoomInterval); isZooming = false; } drawMandelbrot(); }, 50); } &#x200B; canvas.addEventListener("click", () => { zoomIn(); }); &#x200B; drawMandelbrot(); </script>
-
+    <canvas id="mandelbrotCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('mandelbrotCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let offsetX = 0;
+        let offsetY = 0;
+        let zoom = 1;
+        
+        function renderMandelbrot() {
+            const width = canvas.width;
+            const height = canvas.height;
+            const maxIter = 1000;
+        
+            for (let px = 0; px < width; px++) {
+                for (let py = 0; py < height; py++) {
+                    const x0 = (px - width / 2) / (width * zoom / 4) - offsetX;
+                    const y0 = (py - height / 2) / (height * zoom / 4) - offsetY;
+                    let x = 0;
+                    let y = 0;
+                    let iter = 0;
+        
+                    while (x * x + y * y <= 4 && iter < maxIter) {
+                        const xTemp = x * x - y * y + x0;
+                        y = 2 * x * y + y0;
+                        x = xTemp;
+                        iter++;
+                    }
+        
+                    const color = iter === maxIter ? 0 : (iter % 16) * 16;
+                    ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
+                    ctx.fillRect(px, py, 1, 1);
+                }
+            }
+        }
+        
+        function updateZoom(e) {
+            const scaleFactor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+            offsetX += (e.clientX - canvas.width / 2) * (1 - scaleFactor) / zoom;
+            offsetY += (e.clientY - canvas.height / 2) * (1 - scaleFactor) / zoom;
+            zoom *= scaleFactor;
+            renderMandelbrot();
+        }
+        
+        function startPan(e) {
+            const startX = e.clientX;
+            const startY = e.clientY;
+        
+            function pan(e) {
+                offsetX += (startX - e.clientX) / zoom;
+                offsetY += (startY - e.clientY) / zoom;
+                renderMandelbrot();
+                e.preventDefault();
+            }
+        
+            function endPan() {
+                canvas.removeEventListener('mousemove', pan);
+                canvas.removeEventListener('mouseup', endPan);
+                canvas.removeEventListener('mouseout', endPan);
+            }
+        
+            canvas.addEventListener('mousemove', pan);
+            canvas.addEventListener('mouseup', endPan);
+            canvas.addEventListener('mouseout', endPan);
+            e.preventDefault();
+        }
+        
+        canvas.addEventListener('wheel', updateZoom);
+        canvas.addEventListener('mousedown', startPan);
+        
+        renderMandelbrot();
+    </script>
 </body>
-
-</html> 
+</html>
