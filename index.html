@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandelbrot Set</title>
+    <title>Simple Platformer</title>
     <style>
         body {
             margin: 0;
@@ -16,79 +16,59 @@
     </style>
 </head>
 <body>
-    <canvas id="mandelbrotCanvas"></canvas>
+    <canvas id="gameCanvas"></canvas>
     <script>
-        const canvas = document.getElementById('mandelbrotCanvas');
+        const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        
-        let offsetX = 0;
-        let offsetY = 0;
-        let zoom = 1;
-        
-        function renderMandelbrot() {
-            const width = canvas.width;
-            const height = canvas.height;
-            const maxIter = 1000;
-        
-            for (let px = 0; px < width; px++) {
-                for (let py = 0; py < height; py++) {
-                    const x0 = (px - width / 2) / (width * zoom / 4) - offsetX;
-                    const y0 = (py - height / 2) / (height * zoom / 4) - offsetY;
-                    let x = 0;
-                    let y = 0;
-                    let iter = 0;
-        
-                    while (x * x + y * y <= 4 && iter < maxIter) {
-                        const xTemp = x * x - y * y + x0;
-                        y = 2 * x * y + y0;
-                        x = xTemp;
-                        iter++;
-                    }
-        
-                    const color = iter === maxIter ? 0 : (iter % 16) * 16;
-                    ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
-                    ctx.fillRect(px, py, 1, 1);
-                }
+
+        const player = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            width: 30,
+            height: 30,
+            velocityY: 0,
+            onGround: false
+        };
+
+        function drawPlayer() {
+            ctx.fillStyle = 'red';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
+
+        function drawGround() {
+            ctx.fillStyle = 'green';
+            ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
+        }
+
+        function update() {
+            player.velocityY += 1;
+            player.y += player.velocityY;
+            if (player.y >= canvas.height - player.height - 50) {
+                player.y = canvas.height - player.height - 50;
+                player.velocityY = 0;
+                player.onGround = true;
+            } else {
+                player.onGround = false;
             }
         }
-        
-        function updateZoom(e) {
-            const scaleFactor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
-            offsetX += (e.clientX - canvas.width / 2) * (1 - scaleFactor) / zoom;
-            offsetY += (e.clientY - canvas.height / 2) * (1 - scaleFactor) / zoom;
-            zoom *= scaleFactor;
-            renderMandelbrot();
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawGround();
+            drawPlayer();
+            update();
+            requestAnimationFrame(gameLoop);
         }
-        
-        function startPan(e) {
-            const startX = e.clientX;
-            const startY = e.clientY;
-        
-            function pan(e) {
-                offsetX += (startX - e.clientX) / zoom;
-                offsetY += (startY - e.clientY) / zoom;
-                renderMandelbrot();
-                e.preventDefault();
+
+        gameLoop();
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === ' ' && player.onGround) {
+                player.velocityY = -20;
             }
-        
-            function endPan() {
-                canvas.removeEventListener('mousemove', pan);
-                canvas.removeEventListener('mouseup', endPan);
-                canvas.removeEventListener('mouseout', endPan);
-            }
-        
-            canvas.addEventListener('mousemove', pan);
-            canvas.addEventListener('mouseup', endPan);
-            canvas.addEventListener('mouseout', endPan);
-            e.preventDefault();
-        }
-        
-        canvas.addEventListener('wheel', updateZoom);
-        canvas.addEventListener('mousedown', startPan);
-        
-        renderMandelbrot();
+        });
     </script>
 </body>
 </html>
