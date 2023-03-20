@@ -9,44 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Add your custom CSS here */
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .main-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            color: white;
-        }
-        .main-container h1 {
-            font-size: 3rem;
-        }
-        .main-container p {
-            font-size: 1.25rem;
-        }
+
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <h1>The Most Amazing Website Ever</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur magna vitae libero.</p>
-        <button id="magicButton" class="btn btn-lg btn-outline-light">Do Magic!</button>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Add your custom JavaScript here
-        document.getElementById("magicButton").addEventListener("click", function() {
-            const colors = ["#6a11cb", "#2575fc", "#FF5733", "#DAF7A6", "#FFC300"];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelector(".main-container").style.background = randomColor;
-        });
-    </script>
+ 
 </body>
 </html>
