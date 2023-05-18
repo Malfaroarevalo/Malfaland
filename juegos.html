@@ -17,49 +17,45 @@
 	<main>
 		<!-- Aquí iría el contenido de cada página -->
 	<style>
-		body {
-			  margin: 0;
-			  padding: 0;
-			}
-
-			#map {
-			  width: 100%;
-			  height: 100%;
-			}
-
-			#icon {
-			  width: 50px;
-			  height: 50px;
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			}
-    </style>
+	        /* Define the styles for the map */
+	        .map {
+	            width: 800px;
+	            height: 400px;
+	            background-image: url('world_map.jpg'); /* Replace 'world_map.jpg' with the path to your map image */
+	            background-size: cover;
+	            position: relative;
+	        }
+	        
+	        /* Define the styles for the markers */
+	        .marker {
+	            width: 20px;
+	            height: 20px;
+	            background-color: red;
+	            border-radius: 50%;
+	            position: absolute;
+	        }
+	        
+	        /* Define the positions for the markers */
+	        #marker1 {
+	            top: 100px;
+	            left: 200px;
+	        }
+	        
+	        #marker2 {
+	            top: 300px;
+	            left: 400px;
+	        }
+	        
+	        /* Add more marker positions as needed */
+	    </style>
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>
-		<div id="map"></div>
-		<div id="icon"></div>
-
-		<script>
-		var map = L.map('map').setView([0, 0], 1);
-
-		var icon = L.icon({
-		  iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Red_circle.svg/1200px-Red_circle.svg.png',
-		  iconSize: [50, 50]
-		});
-
-		L.marker([0, 0], {icon: icon}).addTo(map);
-
-		map.on('move', function() {
-		  var position = map.getCenter();
-		  $('#icon').css({
-		    top: position.y,
-		    left: position.x
-		  });
-		});
-		</script>
-
+    <div class="map">
+        <div class="marker" id="marker1"></div>
+        <div class="marker" id="marker2"></div>
+        <!-- Add more markers as needed -->
+    </div>
 </body>
 </html>
