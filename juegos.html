@@ -12,9 +12,7 @@
         }
         
         .map {
-            width: 200%; /* Double the width of the map image */
-            height: 100%;
-            background-image: url('world_map.jpg'); /* Replace 'world_map.jpg' with the path to your map image */
+            background-image: url('world_map.jpg');
             background-size: cover;
             position: absolute;
             top: 0;
@@ -23,8 +21,8 @@
         
         /* Define the styles for the character */
         .character {
-            width: 40px; /* Adjust the width of the character image */
-            height: 40px; /* Adjust the height of the character image */
+            width: 40px;
+            height: 40px;
             position: absolute;
             transition: top 0.5s ease, left 0.5s ease;
             z-index: 1;
@@ -39,6 +37,26 @@
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 10px;
+            display: none;
+        }
+        
+        /* Define the styles for the enemy */
+        .enemy {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 0;
+        }
+        
+        /* Define the styles for the battle scene */
+        .battle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 2;
             display: none;
         }
         
@@ -57,6 +75,9 @@
         // Variable to keep track of the number of steps taken
         var stepsTaken = 0;
         
+        // Variable to keep track of the enemy position
+        var enemyPosition = { top: 50, left: 100 }; // Example enemy position
+        
         // Function to move the character
         function moveCharacter(top, left) {
             var character = document.getElementById('character');
@@ -70,25 +91,49 @@
             
             // Check if an event should be triggered
             if (stepsTaken % 10 === 0) {
-                var event = document.getElementById('event');
-                event.style.display = 'block';
+                // Check if the character has encountered an enemy
+                if (characterPosition.top === enemyPosition.top && characterPosition.left === enemyPosition.left) {
+                    // Start the battle
+                    startBattle();
+                }
             }
+        }
+        
+        // Function to start the battle
+        function startBattle() {
+            // Show the battle scene
+            document.getElementById('battle').style.display = 'block';
         }
         
         // Function to rest and recover
         function rest() {
             // Perform rest actions here, such as recovering HP or stamina
             
-            var event = document.getElementById('event');
-            event.style.display = 'none';
+            // Hide the battle scene
+            document.getElementById('battle').style.display = 'none';
         }
         
         // Function to continue moving
         function continueMoving() {
             // Perform actions when choosing to keep moving, such as reducing HP or stamina
             
-            var event = document.getElementById('event');
-            event.style.display = 'none';
+            // Hide the battle scene
+            document.getElementById('battle').style.display = 'none';
+        }
+        
+        // Function to attack the enemy
+        function attack() {
+            // TODO: Implement the attack function
+        }
+        
+        // Function to defend against the enemy
+        function defend() {
+            // TODO: Implement the defend function
+        }
+        
+        // Function to run away from the enemy
+        function run() {
+            // TODO: Implement the run function
         }
         
         // Function to handle character movement based on key presses
@@ -138,6 +183,12 @@
             <p>You're tired, you should rest.</p>
             <button onclick="rest()">Rest</button>
             <button onclick="continueMoving()">Keep Going</button>
+        </div>
+        <div id="battle" class="battle">
+            <p>Battle Scene</p>
+            <button onclick="attack()">Attack</button>
+            <button onclick="defend()">Defend</button>
+            <button onclick="run()">Run</button>
         </div>
         <!-- Add more markers, events, or elements as needed -->
     </div>
