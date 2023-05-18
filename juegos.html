@@ -17,6 +17,9 @@
             position: absolute;
             top: 0;
             left: 0;
+            background-image: url('world.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         
         /* Define the styles for the character */
@@ -60,6 +63,24 @@
             background-color: white;
             z-index: 2;
             display: none;
+            background-image: url('battlescene.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        /* Define the styles for the rest scene */
+        .rest {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 2;
+            display: none;
+            background-image: url('restscene.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         
         /* Add more event styles as needed */
@@ -120,12 +141,20 @@
             }
         }
         
+        // Function to start the battle
+        function startBattle() {
+            // Show the battle scene
+            document.getElementById('battle').style.display = 'block';
+            
+            // TODO: Implement the battle logic and menus
+        }
+        
         // Function to rest and recover
         function rest() {
             // Perform rest actions here, such as recovering HP or stamina
             
             // Hide the battle scene
-            document.getElementById('battle').style.display = 'none';
+            document.getElementById('rest').style.display = 'none';
         }
         
         // Function to continue moving
@@ -214,6 +243,7 @@
         <div id="encounter-layer"></div>
         <div id="character" class="character"></div>
         <div id="battle" class="battle"></div>
+        <div id="rest" class="rest"></div>
     </div>
 </body>
 </html>
