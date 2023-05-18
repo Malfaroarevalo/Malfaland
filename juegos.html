@@ -26,6 +26,7 @@
             position: absolute;
             transition: top 0.5s ease, left 0.5s ease;
             z-index: 1;
+            background-image: url('player1.jpg');
         }
         
         /* Define the styles for the events */
@@ -46,6 +47,7 @@
             height: 40px;
             position: absolute;
             z-index: 0;
+            background-image: url('enemy.jpg');
         }
         
         /* Define the styles for the battle scene */
@@ -68,20 +70,7 @@
             height: 40px;
             position: absolute;
             z-index: 0;
-        }
-        
-        /* Define the styles for the road construction button */
-        .road-construction-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            padding: 5px 10px;
-            background-color: lightgray;
-            cursor: pointer;
-        }
-        
-        .road-construction-button.active {
-            background-color: darkgray;
+            background-color: gray;
         }
     </style>
     <script>
@@ -121,8 +110,12 @@
             if (stepsTaken % 10 === 0) {
                 // Check if the character has encountered an enemy
                 if (characterPosition.top === enemyPosition.top && characterPosition.left === enemyPosition.left) {
-                    // Start the battle
-                    startBattle();
+                    // Prompt the user to enter the battle scene
+                    var confirmBattle = confirm('Do you want to enter the battle scene?');
+                    
+                    if (confirmBattle) {
+                        startBattle();
+                    }
                 }
             }
         }
@@ -191,40 +184,40 @@
             
             // Handle events after a certain number of steps
             handleEvents();
+        }
+        
+        // Function to handle character movement based on mouse clicks
+        function handleMouseClick(event) {
+            var character = document.getElementById('character');
             
-            // Check if road construction mode is active
-            if (isRoadConstructionMode) {
-                // Get the clicked position on the map
-                var clickedPosition = { top: event.clientY, left: event.clientX };
+            // Get current character position
+            var top = characterPosition.top;
+            var left = characterPosition.left;
+            
+            // Handle left mouse click
+            if (event.button === 0) {
+                // Move character to the clicked position
+                top = event.clientY - 20;
+                left = event.clientX - 20;
                 
-                // Calculate the grid position based on the clicked position
-                var gridPosition = {
-                    top: Math.floor(clickedPosition.top / 40) * 40,
-                    left: Math.floor(clickedPosition.left / 40) * 40
-                };
+                // Update character position
+                characterPosition.top = top;
+                characterPosition.left = left;
                 
-                // Check if the clicked position is within the map boundaries
-                if (
-                    gridPosition.top >= 0 && gridPosition.top < mapHeight * 40 &&
-                    gridPosition.left >= 0 && gridPosition.left < mapWidth * 40
-                ) {
-                    // Check if the road already exists at the clicked position
-                    var roadExists = roadLocations.some(function(location) {
-                        return location.top === gridPosition.top && location.left === gridPosition.left;
-                    });
-                    
-                    // If the road doesn't exist, add it to the road locations
-                    if (!roadExists) {
-                        roadLocations.push(gridPosition);
-                        
-                        // Create a new road element and append it to the map
-                        var roadElement = document.createElement('div');
-                        roadElement.className = 'road';
-                        roadElement.style.top = gridPosition.top + 'px';
-                        roadElement.style.left = gridPosition.left + 'px';
-                        document.getElementById('map').appendChild(roadElement);
-                    }
-                }
+                // Move the character on the map
+                moveCharacter(top, left);
+                
+                // Handle events after a certain number of steps
+                handleEvents();
+            }
+            
+            // Handle right mouse click
+            if (event.button === 2) {
+                // Show character menu or inventory
+                var characterMenu = document.getElementById('characterMenu');
+                characterMenu.style.display = 'block';
+                characterMenu.style.top = event.clientY + 'px';
+                characterMenu.style.left = event.clientX + 'px';
             }
         }
         
@@ -240,24 +233,84 @@
 </head>
 <body>
     <div class="map-container">
-        <div id="map" class="map">
-            <!-- Add your map elements here -->
-            <div id="character" class="character" style="top: 100px; left: 200px;"></div>
-            <div id="enemy" class="enemy" style="top: 0px; left: 0px;"></div>
-            <div id="battle" class="battle">
-                <!-- Add battle scene elements here -->
-                <button onclick="attack()">Attack</button>
-                <button onclick="defend()">Defend</button>
-                <button onclick="run()">Run</button>
-            </div>
-        </div>
+        <div class="map" id="map" oncontextmenu="return false"></div>
+        <div class="character" id="character"></div>
     </div>
     
-    <button id="roadConstructionButton" class="road-construction-button" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
-
+    <div class="event" id="battle">
+        <button onclick="attack()">Attack</button>
+        <button onclick="defend()">Defend</button>
+        <button onclick="run()">Run</button>
+    </div>
+    
+    <div class="event" id="characterMenu">
+        <!-- Add options for character menu or inventory -->
+    </div>
+    
+    <button id="roadConstructionButton" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
+    
     <script>
+        // Generate the world map
+        var mapElement = document.getElementById('map');
+        mapElement.style.backgroundImage = "url('world.jpg')";
+        
+        // Generate road layer
+        var roadLayer = document.createElement('div');
+        roadLayer.style.width = mapWidth * 40 + 'px';
+        roadLayer.style.height = mapHeight * 40 + 'px';
+        roadLayer.style.position = 'absolute';
+        roadLayer.style.zIndex = '0';
+        mapElement.appendChild(roadLayer);
+        
+        // Generate encounter layer
+        var encounterLayer = document.createElement('div');
+        encounterLayer.style.width = mapWidth * 40 + 'px';
+        encounterLayer.style.height = mapHeight * 40 + 'px';
+        encounterLayer.style.position = 'absolute';
+        encounterLayer.style.zIndex = '0';
+        mapElement.appendChild(encounterLayer);
+        
+        // Function to generate a road element
+        function generateRoadElement(top, left) {
+            var roadElement = document.createElement('div');
+            roadElement.className = 'road';
+            roadElement.style.top = top + 'px';
+            roadElement.style.left = left + 'px';
+            return roadElement;
+        }
+        
+        // Function to generate an encounter element
+        function generateEncounterElement(top, left) {
+            var encounterElement = document.createElement('div');
+            encounterElement.className = 'enemy';
+            encounterElement.style.top = top + 'px';
+            encounterElement.style.left = left + 'px';
+            return encounterElement;
+        }
+        
+        // Generate roads and encounters
+        for (var i = 0; i < mapHeight; i++) {
+            for (var j = 0; j < mapWidth; j++) {
+                var roadElement = generateRoadElement(i * 40, j * 40);
+                roadLayer.appendChild(roadElement);
+                
+                // Add road location to roadLocations array
+                roadLocations.push({ top: i * 40, left: j * 40 });
+                
+                // Generate encounters at random positions
+                if (Math.random() < 0.1) {
+                    var encounterElement = generateEncounterElement(i * 40, j * 40);
+                    encounterLayer.appendChild(encounterElement);
+                }
+            }
+        }
+        
+        // Set initial character position
+        moveCharacter(characterPosition.top, characterPosition.left);
+        
         // Add event listeners
         document.addEventListener('keydown', handleKeyPress);
+        document.addEventListener('click', handleMouseClick);
     </script>
 </body>
 </html>
