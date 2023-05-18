@@ -16,129 +16,50 @@
 	</header>
 	<main>
 		<!-- Aquí iría el contenido de cada página -->
+	<style>
+		body {
+			  margin: 0;
+			  padding: 0;
+			}
 
-		    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-            background: #6a11cb;
-            color: white;
-        }
-        .world-element {
-            position: absolute;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-        .world-element.active {
-            background: rgba(255, 255, 255, 0.4);
-        }
-        .dot {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #FFC300;
-            border-radius: 50%;
-        }
-                body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .main-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            color: white;
-        }
-        .main-container h1 {
-            font-size: 3rem;
-        }
-        .main-container p {
-            font-size: 1.25rem;
-        }
+			#map {
+			  width: 100%;
+			  height: 100%;
+			}
+
+			#icon {
+			  width: 50px;
+			  height: 50px;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			}
     </style>
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>
-    <div class="world-element" id="floraFauna" style="top: 10%; left: 10%;">Flora y Fauna</div>
-    <div class="world-element" id="characterGrowth" style="top: 10%; right: 10%;">Crecimiento del personaje</div>
-    <div class="world-element" id="evolutionaryWorld" style="bottom: 10%; left: 10%;">Mundo evolutivo</div>
-    <div class="world-element" id="companionCharacters" style="bottom: 10%; right: 10%;">Personajes acompañantes</div>
-    <div class="dot" id="dot"></div>
+		<div id="map"></div>
+		<div id="icon"></div>
 
-	<div class="main-container">
-        <h1>The Most Amazing Website Ever</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur magna vitae libero.</p>
-        <button id="magicButton" class="btn btn-lg btn-outline-light">Do Magic!</button>
-    </div>
-    <script>
-        const dot = document.getElementById('dot');
-        let dotX = 0;
-        let dotY = 0;
+		<script>
+		var map = L.map('map').setView([0, 0], 1);
 
-        function moveDot(e) {
-            const step = 5;
-            switch (e.key) {
-                case 'ArrowUp':
-                    dotY -= step;
-                    break;
-                case 'ArrowDown':
-                    dotY += step;
-                    break;
-                case 'ArrowLeft':
-                    dotX -= step;
-                    break;
-                case 'ArrowRight':
-                    dotX += step;
-                    break;
-            }
-            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+		var icon = L.icon({
+		  iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Red_circle.svg/1200px-Red_circle.svg.png',
+		  iconSize: [50, 50]
+		});
 
-            checkDotPosition();
-        }
+		L.marker([0, 0], {icon: icon}).addTo(map);
 
-        function checkDotPosition() {
-            const worldElements = document.querySelectorAll('.world-element');
-            worldElements.forEach(element => {
-                const elementRect = element.getBoundingClientRect();
-                const dotRect = dot.getBoundingClientRect();
+		map.on('move', function() {
+		  var position = map.getCenter();
+		  $('#icon').css({
+		    top: position.y,
+		    left: position.x
+		  });
+		});
+		</script>
 
-                if (
-                    dotRect.top > elementRect.top &&
-                    dotRect.bottom < elementRect.bottom &&
-                    dotRect.left > elementRect.left &&
-                    dotRect.right < elementRect.right
-                ) {
-                    element.classList.add('active');
-                } else {
-                    element.classList.remove('active');
-                }
-            });
-        }
-
-        document.addEventListener('keydown', moveDot);
-
-    </script>
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Add your custom JavaScript here
-        document.getElementById("magicButton").addEventListener("click", function() {
-            const colors = ["#6a11cb", "#2575fc", "#FF5733", "#DAF7A6", "#FFC300"];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelector(".main-container").style.background = randomColor;
-        });
-    </script>
 </body>
 </html>
