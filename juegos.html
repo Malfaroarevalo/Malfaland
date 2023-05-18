@@ -19,7 +19,6 @@
             left: 0;
             background-image: url('world.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
         }
         
         /* Define the styles for the character */
@@ -30,6 +29,7 @@
             transition: top 0.5s ease, left 0.5s ease;
             z-index: 1;
             background-image: url('player1.jpg');
+            background-size: cover;
         }
         
         /* Define the styles for the events */
@@ -51,6 +51,7 @@
             position: absolute;
             z-index: 0;
             background-image: url('enemy.jpg');
+            background-size: cover;
         }
         
         /* Define the styles for the battle scene */
@@ -63,9 +64,6 @@
             background-color: white;
             z-index: 2;
             display: none;
-            background-image: url('battlescene.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
         }
         
         /* Define the styles for the rest scene */
@@ -78,9 +76,6 @@
             background-color: white;
             z-index: 2;
             display: none;
-            background-image: url('restscene.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
         }
         
         /* Add more event styles as needed */
@@ -141,20 +136,12 @@
             }
         }
         
-        // Function to start the battle
-        function startBattle() {
-            // Show the battle scene
-            document.getElementById('battle').style.display = 'block';
-            
-            // TODO: Implement the battle logic and menus
-        }
-        
         // Function to rest and recover
         function rest() {
             // Perform rest actions here, such as recovering HP or stamina
             
-            // Hide the battle scene
-            document.getElementById('rest').style.display = 'none';
+            // Show the rest scene
+            document.getElementById('rest').style.display = 'block';
         }
         
         // Function to continue moving
@@ -200,6 +187,7 @@
         
         // Generate roads and encounters
         function generateRoads() {
+            var roadLayer = document.getElementById('road-layer');
             for (var i = 0; i < mapHeight; i++) {
                 for (var j = 0; j < mapWidth; j++) {
                     var roadElement = generateRoadElement(i * 40, j * 40);
@@ -209,6 +197,7 @@
         }
         
         function generateEncounters() {
+            var encounterLayer = document.getElementById('encounter-layer');
             for (var i = 0; i < mapHeight; i++) {
                 for (var j = 0; j < mapWidth; j++) {
                     if (Math.random() < 0.1) {
@@ -220,30 +209,71 @@
         }
         
         // Set initial character position
-        function moveCharacter(top, left) {
-            character.style.top = top + 'px';
-            character.style.left = left + 'px';
+        function setInitialCharacterPosition(top, left) {
+            characterPosition.top = top;
+            characterPosition.left = left;
+            moveCharacter(characterPosition.top, characterPosition.left);
         }
         
         // Initialize the game
-        generateRoads();
-        generateEncounters();
-        moveCharacter(characterPosition.top, characterPosition.left);
+        function initializeGame() {
+            generateRoads();
+            generateEncounters();
+            setInitialCharacterPosition(characterPosition.top, characterPosition.left);
+        }
         
-        // Add event listeners
-        document.addEventListener('keydown', handleKeyPress);
-        document.addEventListener('click', handleMouseClick);
+        // Event listeners for key presses
+        window.addEventListener('keydown', function (event) {
+            var character = document.getElementById('character');
+            var newPosition = { top: characterPosition.top, left: characterPosition.left };
+            
+            switch (event.key) {
+                case 'ArrowUp':
+                    newPosition.top -= 40;
+                    break;
+                case 'ArrowDown':
+                    newPosition.top += 40;
+                    break;
+                case 'ArrowLeft':
+                    newPosition.left -= 40;
+                    break;
+                case 'ArrowRight':
+                    newPosition.left += 40;
+                    break;
+            }
+            
+            // Check if the new position is valid
+            if (
+                newPosition.top >= 0 &&
+                newPosition.top < mapHeight * 40 &&
+                newPosition.left >= 0 &&
+                newPosition.left < mapWidth * 40
+            ) {
+                moveCharacter(newPosition.top, newPosition.left);
+                characterPosition = newPosition;
+                handleEvents();
+            }
+        });
+        
+        // Initialize the game when the page is loaded
+        window.addEventListener('load', function () {
+            initializeGame();
+        });
     </script>
 </head>
 <body>
-    <!-- Add the map container and layers -->
     <div class="map-container">
-        <div class="map"></div>
-        <div id="road-layer"></div>
-        <div id="encounter-layer"></div>
-        <div id="character" class="character"></div>
-        <div id="battle" class="battle"></div>
-        <div id="rest" class="rest"></div>
+        <div class="map" id="road-layer"></div>
+        <div class="map" id="encounter-layer"></div>
+        <div class="character" id="character"></div>
+        <div class="battle" id="battle">
+            <button onclick="attack()">Attack</button>
+            <button onclick="defend()">Defend</button>
+            <button onclick="run()">Run</button>
+        </div>
+        <div class="rest" id="rest">
+            <button onclick="continueMoving()">Continue Moving</button>
+        </div>
     </div>
 </body>
 </html>
