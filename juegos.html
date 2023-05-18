@@ -61,6 +61,14 @@
         }
         
         /* Add more event styles as needed */
+        
+        /* Define the styles for the road */
+        .road {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 0;
+        }
     </style>
     <script>
         // JavaScript code for character movement and events
@@ -76,7 +84,13 @@
         var stepsTaken = 0;
         
         // Variable to keep track of the enemy position
-        var enemyPosition = { top: 50, left: 100 }; // Example enemy position
+        var enemyPosition = { top: 0, left: 0 };
+        
+        // Variable to store the road locations
+        var roadLocations = [];
+        
+        // Variable to keep track of the road construction mode
+        var isRoadConstructionMode = false;
         
         // Function to move the character
         function moveCharacter(top, left) {
@@ -97,12 +111,6 @@
                     startBattle();
                 }
             }
-        }
-        
-        // Function to start the battle
-        function startBattle() {
-            // Show the battle scene
-            document.getElementById('battle').style.display = 'block';
         }
         
         // Function to rest and recover
@@ -169,30 +177,58 @@
             
             // Handle events after a certain number of steps
             handleEvents();
+            
+            // Check if road construction mode is active
+			if (isRoadConstructionMode) {
+			// Get the clicked position on the map
+			var clickedPosition = { top: event.clientY, left: event.clientX };
+			// Calculate the grid position based on the clicked position
+            var gridPosition = {
+                top: Math.floor(clickedPosition.top / 40) * 40,
+                left: Math.floor(clickedPosition.left / 40) * 40
+            };
+            
+            // Check if the clicked position is within the map boundaries
+            if (
+                gridPosition.top >= 0 && gridPosition.top < mapHeight * 40 &&
+                gridPosition.left >= 0 && gridPosition.left < mapWidth * 40
+            ) {
+                // Check if the road already exists at the clicked position
+                var roadExists = roadLocations.some(function(location) {
+                    return location.top === gridPosition.top && location.left === gridPosition.left;
+                });
+                
+                // If the road doesn't exist, add it to the road locations
+                if (!roadExists) {
+                    roadLocations.push(gridPosition);
+                    
+                    // Create a new road element and append it to the map
+                    var roadElement = document.createElement('div');
+                    roadElement.className = 'road';
+                    roadElement.style.top = gridPosition.top + 'px';
+                    roadElement.style.left = gridPosition.left + 'px';
+                    document.getElementById('map').appendChild(roadElement);
+                }
+            }
         }
+    }
+    
+    // Function to toggle road construction mode
+    function toggleRoadConstructionMode() {
+        isRoadConstructionMode = !isRoadConstructionMode;
         
-        // Add event listener for key presses
-        document.addEventListener('keydown', handleKeyPress);
-    </script>
+        // Update UI based on road construction mode
+        var roadConstructionButton = document.getElementById('roadConstructionButton');
+        roadConstructionButton.classList.toggle('active', isRoadConstructionMode);
+    }
+</script>
 </head>
 <body>
     <div class="map-container">
-        <div class="map">
-            <img src="world_map.jpg" alt="World Map" style="width: 100%; height: 100%;">
-        </div>
-        <img id="character" class="character" src="player1.jpg" alt="Player 1" style="top: 100px; left: 200px;">
-        <div id="event" class="event">
-            <p>You're tired, you should rest.</p>
-            <button onclick="rest()">Rest</button>
-            <button onclick="continueMoving()">Keep Going</button>
-        </div>
-        <div id="battle" class="battle">
-            <p>Battle Scene</p>
-            <button onclick="attack()">Attack</button>
-            <button onclick="defend()">Defend</button>
-            <button onclick="run()">Run</button>
-        </div>
-        <!-- Add more markers, events, or elements as needed -->
+        <div id="map" class="map" onclick="handleKeyPress(event)"></div>
+        <img id="character" class="character" src="player1.jpg" alt="Player 1">
+        <!-- Add road construction button to your UI -->
+        <button id="roadConstructionButton" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
     </div>
 </body>
 </html>
