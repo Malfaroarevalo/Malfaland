@@ -151,125 +151,6 @@
             // TODO: Implement the run function
         }
         
-        // Function to handle character movement based on key presses
-        function handleKeyPress(event) {
-            var character = document.getElementById('character');
-            
-            // Get current character position
-            var top = characterPosition.top;
-            var left = characterPosition.left;
-            
-            // Handle arrow key presses
-            switch (event.key) {
-                case 'ArrowUp':
-                    if (top > 0) top -= 20;
-                    break;
-                case 'ArrowDown':
-                    if (top < (mapHeight - 1) * 20) top += 20;
-                    break;
-                case 'ArrowLeft':
-                    if (left > 0) left -= 20;
-                    break;
-                case 'ArrowRight':
-                    if (left < (mapWidth - 1) * 20) left += 20;
-                    break;
-            }
-            
-            // Update character position
-            characterPosition.top = top;
-            characterPosition.left = left;
-            
-            // Move the character on the map
-            moveCharacter(top, left);
-            
-            // Handle events after a certain number of steps
-            handleEvents();
-        }
-        
-        // Function to handle character movement based on mouse clicks
-        function handleMouseClick(event) {
-            var character = document.getElementById('character');
-            
-            // Get current character position
-            var top = characterPosition.top;
-            var left = characterPosition.left;
-            
-            // Handle left mouse click
-            if (event.button === 0) {
-                // Move character to the clicked position
-                top = event.clientY - 20;
-                left = event.clientX - 20;
-                
-                // Update character position
-                characterPosition.top = top;
-                characterPosition.left = left;
-                
-                // Move the character on the map
-                moveCharacter(top, left);
-                
-                // Handle events after a certain number of steps
-                handleEvents();
-            }
-            
-            // Handle right mouse click
-            if (event.button === 2) {
-                // Show character menu or inventory
-                var characterMenu = document.getElementById('characterMenu');
-                characterMenu.style.display = 'block';
-                characterMenu.style.top = event.clientY + 'px';
-                characterMenu.style.left = event.clientX + 'px';
-            }
-        }
-        
-        // Function to toggle road construction mode
-        function toggleRoadConstructionMode() {
-            isRoadConstructionMode = !isRoadConstructionMode;
-            
-            // Update UI based on road construction mode
-            var roadConstructionButton = document.getElementById('roadConstructionButton');
-            roadConstructionButton.classList.toggle('active', isRoadConstructionMode);
-        }
-    </script>
-</head>
-<body>
-    <div class="map-container">
-        <div class="map" id="map" oncontextmenu="return false"></div>
-        <div class="character" id="character"></div>
-    </div>
-    
-    <div class="event" id="battle">
-        <button onclick="attack()">Attack</button>
-        <button onclick="defend()">Defend</button>
-        <button onclick="run()">Run</button>
-    </div>
-    
-    <div class="event" id="characterMenu">
-        <!-- Add options for character menu or inventory -->
-    </div>
-    
-    <button id="roadConstructionButton" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
-    
-    <script>
-        // Generate the world map
-        var mapElement = document.getElementById('map');
-        mapElement.style.backgroundImage = "url('world.jpg')";
-        
-        // Generate road layer
-        var roadLayer = document.createElement('div');
-        roadLayer.style.width = mapWidth * 40 + 'px';
-        roadLayer.style.height = mapHeight * 40 + 'px';
-        roadLayer.style.position = 'absolute';
-        roadLayer.style.zIndex = '0';
-        mapElement.appendChild(roadLayer);
-        
-        // Generate encounter layer
-        var encounterLayer = document.createElement('div');
-        encounterLayer.style.width = mapWidth * 40 + 'px';
-        encounterLayer.style.height = mapHeight * 40 + 'px';
-        encounterLayer.style.position = 'absolute';
-        encounterLayer.style.zIndex = '0';
-        mapElement.appendChild(encounterLayer);
-        
         // Function to generate a road element
         function generateRoadElement(top, left) {
             var roadElement = document.createElement('div');
@@ -289,23 +170,35 @@
         }
         
         // Generate roads and encounters
-        for (var i = 0; i < mapHeight; i++) {
-            for (var j = 0; j < mapWidth; j++) {
-                var roadElement = generateRoadElement(i * 40, j * 40);
-                roadLayer.appendChild(roadElement);
-                
-                // Add road location to roadLocations array
-                roadLocations.push({ top: i * 40, left: j * 40 });
-                
-                // Generate encounters at random positions
-                if (Math.random() < 0.1) {
-                    var encounterElement = generateEncounterElement(i * 40, j * 40);
-                    encounterLayer.appendChild(encounterElement);
+        function generateRoads() {
+            for (var i = 0; i < mapHeight; i++) {
+                for (var j = 0; j < mapWidth; j++) {
+                    var roadElement = generateRoadElement(i * 40, j * 40);
+                    roadLayer.appendChild(roadElement);
+                }
+            }
+        }
+        
+        function generateEncounters() {
+            for (var i = 0; i < mapHeight; i++) {
+                for (var j = 0; j < mapWidth; j++) {
+                    if (Math.random() < 0.1) {
+                        var encounterElement = generateEncounterElement(i * 40, j * 40);
+                        encounterLayer.appendChild(encounterElement);
+                    }
                 }
             }
         }
         
         // Set initial character position
+        function moveCharacter(top, left) {
+            character.style.top = top + 'px';
+            character.style.left = left + 'px';
+        }
+        
+        // Initialize the game
+        generateRoads();
+        generateEncounters();
         moveCharacter(characterPosition.top, characterPosition.left);
         
         // Add event listeners
