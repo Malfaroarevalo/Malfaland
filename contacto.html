@@ -3,13 +3,12 @@
 <head>
 	<title>Mi sitio web</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 <body>
 	<header>
 		<nav>
 			<a href="index.html">Inicio</a>
-			<a href="juegos.html">Juegos</a>
+			<a href="juegos.html">Creaciónes random</a>
 			<a href="sobremi.html">Sobre Mí</a>
 			<a href="contacto.html">Contacto</a>
 		</nav>
@@ -17,7 +16,18 @@
 	<main>
 		<!-- Aquí iría el contenido de cada página -->
 
-		No quiero socializar aún.
 	</main>
+		<form class="contact-form" action="mailto:malfarorevalo@gmail.com" method="post" enctype="text/plain">
+		  <label for="remitente">Remitente:</label>
+		  <input type="text" id="remitente" name="remitente" placeholder="Nombre" required>
+	  
+		  <label for="correo">Correo Electrónico:</label>
+		  <input type="email" id="correo" name="correo" placeholder="tucorreo@example.com" required>
+	  
+		  <label for="mensaje">Mensaje:</label>
+		  <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje acá, po!" required></textarea>
+	  
+		  <button type="submit">Enviar</button>
+		</form>
 </body>
 </html>
