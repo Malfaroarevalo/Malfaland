@@ -1,61 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Creaciónes random</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-
-</head>
-<body>
-	<header>
-		<nav>
-			<a href="index.html">Inicio</a>
-			<a href="juegos.html">Creaciónes random</a>
-			<a href="sobremi.html">Sobre Mí</a>
-			<a href="contacto.html">Contacto</a>
-		</nav>
-	</header>
-	<main>
-		<!-- Aquí iría el contenido de cada página -->
-	<style>
-	        /* Define the styles for the map */
-	        .map {
-	            width: 800px;
-	            height: 400px;
-	            background-image: url('world_map.jpg'); /* Replace 'world_map.jpg' with the path to your map image */
-	            background-size: cover;
-	            position: relative;
-	        }
-	        
-	        /* Define the styles for the markers */
-	        .marker {
-	            width: 20px;
-	            height: 20px;
-	            background-color: red;
-	            border-radius: 50%;
-	            position: absolute;
-	        }
-	        
-	        /* Define the positions for the markers */
-	        #marker1 {
-	            top: 100px;
-	            left: 200px;
-	        }
-	        
-	        #marker2 {
-	            top: 300px;
-	            left: 400px;
-	        }
-	        
-	        /* Add more marker positions as needed */
-	    </style>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
+    <title>World Map</title>
+    <style>
+        /* Define the styles for the map */
+        .map {
+            width: 800px;
+            height: 400px;
+            background-image: url('world_map.jpg'); /* Replace 'world_map.jpg' with the path to your map image */
+            background-size: cover;
+            position: relative;
+        }
+        
+        /* Define the styles for the character */
+        .character {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            transition: top 0.5s ease, left 0.5s ease;
+        }
+        
+        /* Define the styles for the events */
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            display: none;
+        }
+        
+        /* Add more event styles as needed */
+    </style>
+    <script>
+        // JavaScript code for character movement and events
+        
+        // Variable to keep track of character position
+        var characterPosition = { top: 100, left: 200 };
+        
+        // Variable to keep track of the number of steps taken
+        var stepsTaken = 0;
+        
+        // Function to move the character
+        function moveCharacter(top, left) {
+            var character = document.getElementById('character');
+            character.style.top = top + 'px';
+            character.style.left = left + 'px';
+        }
+        
+        // Function to handle events after a certain number of steps
+        function handleEvents() {
+            stepsTaken++;
+            
+            // Check if an event should be triggered
+            if (stepsTaken % 10 === 0) {
+                var event = document.getElementById('event');
+                event.style.display = 'block';
+            }
+        }
+        
+        // Function to rest and recover
+        function rest() {
+            // Perform rest actions here, such as recovering HP or stamina
+            
+            var event = document.getElementById('event');
+            event.style.display = 'none';
+        }
+        
+        // Function to continue moving
+        function continueMoving() {
+            // Perform actions when choosing to keep moving, such as reducing HP or stamina
+            
+            var event = document.getElementById('event');
+            event.style.display = 'none';
+        }
+        
+        // Function to handle character movement based on key presses
+        function handleKeyPress(event) {
+            var character = document.getElementById('character');
+            
+            // Get current character position
+            var top = characterPosition.top;
+            var left = characterPosition.left;
+            
+            // Handle arrow key presses
+            switch (event.key) {
+                case 'ArrowUp':
+                    top -= 20;
+                    break;
+                case 'ArrowDown':
+                    top += 20;
+                    break;
+                case 'ArrowLeft':
+                    left -= 20;
+                    break;
+                case 'ArrowRight':
+                    left += 20;
+                    break;
+            }
+            
+            // Update character position
+            characterPosition.top = top;
+            characterPosition.left = left;
+            
+            // Move the character on the map
+            moveCharacter(top, left);
+            
+            // Handle events after a certain number of steps
+            handleEvents();
+        }
+        
+        // Add event listener for key presses
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
 </head>
 <body>
     <div class="map">
-        <div class="marker" id="marker1"></div>
-        <div class="marker" id="marker2"></div>
-        <!-- Add more markers as needed -->
+        <div id="character" class="character" style="top: 100px; left: 200px;"></div>
+        <div id="event" class="event">
+            <p>You're tired, you should rest.</p>
+            <button onclick="rest()">Rest</button>
+            <button onclick="continueMoving()">Keep Going</button>
+        </div>
+        <!-- Add more markers, events, or elements as needed -->
     </div>
 </body>
 </html>
