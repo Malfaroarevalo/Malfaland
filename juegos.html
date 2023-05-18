@@ -69,6 +69,20 @@
             position: absolute;
             z-index: 0;
         }
+        
+        /* Define the styles for the road construction button */
+        .road-construction-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        
+        .road-construction-button.active {
+            background-color: darkgray;
+        }
     </style>
     <script>
         // JavaScript code for character movement and events
@@ -179,56 +193,71 @@
             handleEvents();
             
             // Check if road construction mode is active
-			if (isRoadConstructionMode) {
-			// Get the clicked position on the map
-			var clickedPosition = { top: event.clientY, left: event.clientX };
-			// Calculate the grid position based on the clicked position
-            var gridPosition = {
-                top: Math.floor(clickedPosition.top / 40) * 40,
-                left: Math.floor(clickedPosition.left / 40) * 40
-            };
-            
-            // Check if the clicked position is within the map boundaries
-            if (
-                gridPosition.top >= 0 && gridPosition.top < mapHeight * 40 &&
-                gridPosition.left >= 0 && gridPosition.left < mapWidth * 40
-            ) {
-                // Check if the road already exists at the clicked position
-                var roadExists = roadLocations.some(function(location) {
-                    return location.top === gridPosition.top && location.left === gridPosition.left;
-                });
+            if (isRoadConstructionMode) {
+                // Get the clicked position on the map
+                var clickedPosition = { top: event.clientY, left: event.clientX };
                 
-                // If the road doesn't exist, add it to the road locations
-                if (!roadExists) {
-                    roadLocations.push(gridPosition);
+                // Calculate the grid position based on the clicked position
+                var gridPosition = {
+                    top: Math.floor(clickedPosition.top / 40) * 40,
+                    left: Math.floor(clickedPosition.left / 40) * 40
+                };
+                
+                // Check if the clicked position is within the map boundaries
+                if (
+                    gridPosition.top >= 0 && gridPosition.top < mapHeight * 40 &&
+                    gridPosition.left >= 0 && gridPosition.left < mapWidth * 40
+                ) {
+                    // Check if the road already exists at the clicked position
+                    var roadExists = roadLocations.some(function(location) {
+                        return location.top === gridPosition.top && location.left === gridPosition.left;
+                    });
                     
-                    // Create a new road element and append it to the map
-                    var roadElement = document.createElement('div');
-                    roadElement.className = 'road';
-                    roadElement.style.top = gridPosition.top + 'px';
-                    roadElement.style.left = gridPosition.left + 'px';
-                    document.getElementById('map').appendChild(roadElement);
+                    // If the road doesn't exist, add it to the road locations
+                    if (!roadExists) {
+                        roadLocations.push(gridPosition);
+                        
+                        // Create a new road element and append it to the map
+                        var roadElement = document.createElement('div');
+                        roadElement.className = 'road';
+                        roadElement.style.top = gridPosition.top + 'px';
+                        roadElement.style.left = gridPosition.left + 'px';
+                        document.getElementById('map').appendChild(roadElement);
+                    }
                 }
             }
         }
-    }
-    
-    // Function to toggle road construction mode
-    function toggleRoadConstructionMode() {
-        isRoadConstructionMode = !isRoadConstructionMode;
         
-        // Update UI based on road construction mode
-        var roadConstructionButton = document.getElementById('roadConstructionButton');
-        roadConstructionButton.classList.toggle('active', isRoadConstructionMode);
-    }
-</script>
+        // Function to toggle road construction mode
+        function toggleRoadConstructionMode() {
+            isRoadConstructionMode = !isRoadConstructionMode;
+            
+            // Update UI based on road construction mode
+            var roadConstructionButton = document.getElementById('roadConstructionButton');
+            roadConstructionButton.classList.toggle('active', isRoadConstructionMode);
+        }
+    </script>
 </head>
 <body>
     <div class="map-container">
-        <div id="map" class="map" onclick="handleKeyPress(event)"></div>
-        <img id="character" class="character" src="player1.jpg" alt="Player 1">
-        <!-- Add road construction button to your UI -->
-        <button id="roadConstructionButton" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
+        <div id="map" class="map">
+            <!-- Add your map elements here -->
+            <div id="character" class="character" style="top: 100px; left: 200px;"></div>
+            <div id="enemy" class="enemy" style="top: 0px; left: 0px;"></div>
+            <div id="battle" class="battle">
+                <!-- Add battle scene elements here -->
+                <button onclick="attack()">Attack</button>
+                <button onclick="defend()">Defend</button>
+                <button onclick="run()">Run</button>
+            </div>
+        </div>
     </div>
+    
+    <button id="roadConstructionButton" class="road-construction-button" onclick="toggleRoadConstructionMode()">Road Construction Mode</button>
+
+    <script>
+        // Add event listeners
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
 </body>
 </html>
