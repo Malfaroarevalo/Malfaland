@@ -1,279 +1,156 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>World Map</title>
+  <head>
+    <title>Interactive World Map</title>
     <style>
-        /* Define the styles for the map */
-        .map-container {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .map {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-image: url('world.jpg');
-            background-size: cover;
-        }
-        
-        /* Define the styles for the character */
-        .character {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            transition: top 0.5s ease, left 0.5s ease;
-            z-index: 1;
-            background-image: url('player1.jpg');
-            background-size: cover;
-        }
-        
-        /* Define the styles for the events */
-        .event {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            display: none;
-        }
-        
-        /* Define the styles for the enemy */
-        .enemy {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            z-index: 0;
-            background-image: url('enemy.jpg');
-            background-size: cover;
-        }
-        
-        /* Define the styles for the battle scene */
-        .battle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 2;
-            display: none;
-        }
-        
-        /* Define the styles for the rest scene */
-        .rest {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 2;
-            display: none;
-        }
-        
-        /* Add more event styles as needed */
-        
-        /* Define the styles for the road */
-        .road {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            z-index: 0;
-            background-color: gray;
-        }
+      #world-map {
+        position: relative;
+        width: 1000px;
+        height: 500px;
+        background-image: url('world.jpg');
+        background-size: cover;
+      }
+      #player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-image: url('player1.jpg');
+        background-size: cover;
+      }
+      .encounter {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-image: url('enemy.jpg');
+        background-size: cover;
+        display: none;
+      }
+      .context-menu {
+        position: absolute;
+        z-index: 1;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        display: none;
+      }
     </style>
-    <script>
-        // JavaScript code for character movement and events
-        
-        // Variable to keep track of the map dimensions
-        var mapWidth = 200; // Width of the map (in virtual units)
-        var mapHeight = 100; // Height of the map (in virtual units)
-        
-        // Variable to keep track of the character position
-        var characterPosition = { top: 100, left: 200 };
-        
-        // Variable to keep track of the number of steps taken
-        var stepsTaken = 0;
-        
-        // Variable to keep track of the enemy position
-        var enemyPosition = { top: 0, left: 0 };
-        
-        // Variable to store the road locations
-        var roadLocations = [];
-        
-        // Variable to keep track of the road construction mode
-        var isRoadConstructionMode = false;
-        
-        // Function to move the character
-        function moveCharacter(top, left) {
-            var character = document.getElementById('character');
-            character.style.top = top + 'px';
-            character.style.left = left + 'px';
-        }
-        
-        // Function to handle events after a certain number of steps
-        function handleEvents() {
-            stepsTaken++;
-            
-            // Check if an event should be triggered
-            if (stepsTaken % 10 === 0) {
-                // Check if the character has encountered an enemy
-                if (characterPosition.top === enemyPosition.top && characterPosition.left === enemyPosition.left) {
-                    // Prompt the user to enter the battle scene
-                    var confirmBattle = confirm('Do you want to enter the battle scene?');
-                    
-                    if (confirmBattle) {
-                        startBattle();
-                    }
-                }
-            }
-        }
-        
-        // Function to rest and recover
-        function rest() {
-            // Perform rest actions here, such as recovering HP or stamina
-            
-            // Show the rest scene
-            document.getElementById('rest').style.display = 'block';
-        }
-        
-        // Function to continue moving
-        function continueMoving() {
-            // Perform actions when choosing to keep moving, such as reducing HP or stamina
-            
-            // Hide the battle scene
-            document.getElementById('battle').style.display = 'none';
-        }
-        
-        // Function to attack the enemy
-        function attack() {
-            // TODO: Implement the attack function
-        }
-        
-        // Function to defend against the enemy
-        function defend() {
-            // TODO: Implement the defend function
-        }
-        
-        // Function to run away from the enemy
-        function run() {
-            // TODO: Implement the run function
-        }
-        
-        // Function to generate a road element
-        function generateRoadElement(top, left) {
-            var roadElement = document.createElement('div');
-            roadElement.className = 'road';
-            roadElement.style.top = top + 'px';
-            roadElement.style.left = left + 'px';
-            return roadElement;
-        }
-        
-        // Function to generate an encounter element
-        function generateEncounterElement(top, left) {
-            var encounterElement = document.createElement('div');
-            encounterElement.className = 'enemy';
-            encounterElement.style.top = top + 'px';
-            encounterElement.style.left = left + 'px';
-            return encounterElement;
-        }
-        
-        // Generate roads and encounters
-        function generateRoads() {
-            var roadLayer = document.getElementById('road-layer');
-            for (var i = 0; i < mapHeight; i++) {
-                for (var j = 0; j < mapWidth; j++) {
-                    var roadElement = generateRoadElement(i * 40, j * 40);
-                    roadLayer.appendChild(roadElement);
-                }
-            }
-        }
-        
-        function generateEncounters() {
-            var encounterLayer = document.getElementById('encounter-layer');
-            for (var i = 0; i < mapHeight; i++) {
-                for (var j = 0; j < mapWidth; j++) {
-                    if (Math.random() < 0.1) {
-                        var encounterElement = generateEncounterElement(i * 40, j * 40);
-                        encounterLayer.appendChild(encounterElement);
-                    }
-                }
-            }
-        }
-        
-        // Set initial character position
-        function setInitialCharacterPosition(top, left) {
-            characterPosition.top = top;
-            characterPosition.left = left;
-            moveCharacter(characterPosition.top, characterPosition.left);
-        }
-        
-        // Initialize the game
-        function initializeGame() {
-            generateRoads();
-            generateEncounters();
-            setInitialCharacterPosition(characterPosition.top, characterPosition.left);
-        }
-        
-        // Event listeners for key presses
-        window.addEventListener('keydown', function (event) {
-            var character = document.getElementById('character');
-            var newPosition = { top: characterPosition.top, left: characterPosition.left };
-            
-            switch (event.key) {
-                case 'ArrowUp':
-                    newPosition.top -= 40;
-                    break;
-                case 'ArrowDown':
-                    newPosition.top += 40;
-                    break;
-                case 'ArrowLeft':
-                    newPosition.left -= 40;
-                    break;
-                case 'ArrowRight':
-                    newPosition.left += 40;
-                    break;
-            }
-            
-            // Check if the new position is valid
-            if (
-                newPosition.top >= 0 &&
-                newPosition.top < mapHeight * 40 &&
-                newPosition.left >= 0 &&
-                newPosition.left < mapWidth * 40
-            ) {
-                moveCharacter(newPosition.top, newPosition.left);
-                characterPosition = newPosition;
-                handleEvents();
-            }
-        });
-        
-        // Initialize the game when the page is loaded
-        window.addEventListener('load', function () {
-            initializeGame();
-        });
-    </script>
-</head>
-<body>
-    <div class="map-container">
-        <div class="map" id="road-layer"></div>
-        <div class="map" id="encounter-layer"></div>
-        <div class="character" id="character"></div>
-        <div class="battle" id="battle">
-            <button onclick="attack()">Attack</button>
-            <button onclick="defend()">Defend</button>
-            <button onclick="run()">Run</button>
-        </div>
-        <div class="rest" id="rest">
-            <button onclick="continueMoving()">Continue Moving</button>
-        </div>
+  </head>
+  <body>
+    <div id="world-map">
+      <div id="player"></div>
+      <div id="encounters"></div>
+      <div id="context-menu"></div>
     </div>
-</body>
+<script>
+  // Define the player object
+var player = {
+  x: 0,
+  y: 0
+};
+
+// Define the encounters array
+var encounters = [];
+
+// Create 10 random encounters
+for (var i = 0; i < 10; i++) {
+  var encounter = {
+    x: Math.floor(Math.random() * 950),
+    y: Math.floor(Math.random() * 450)
+  };
+  encounters.push(encounter);
+}
+
+// Add event listeners to the world map
+var worldMap = document.getElementById('world-map');
+worldMap.addEventListener('mousedown', function(event) {
+  if (event.button === 0) {
+    // Move the player to the clicked position
+    var rect = worldMap.getBoundingClientRect();
+    player.x = event.clientX - rect.left - 25;
+    player.y = event.clientY - rect.top - 25;
+    var playerDiv = document.getElementById('player');
+    playerDiv.style.left = player.x + 'px';
+    playerDiv.style.top = player.y + 'px';
+    
+    // Check if the player encounters an enemy
+    for (var i = 0; i < encounters.length; i++) {
+      var encounter = encounters[i];
+      if (Math.abs(player.x - encounter.x) < 25 && Math.abs(player.y - encounter.y) < 25) {
+        // Prompt the user to enter a battle scene
+        var confirmBattle = confirm('Do youwant to enter a battle scene?');
+        if (confirmBattle) {
+          // Enter the battle scene
+          console.log('Entering battle scene...');
+        }
+      }
+    }
+  } else if (event.button === 2) {
+    // Show the context menu at the clicked position
+    var contextMenu = document.getElementById('context-menu');
+    contextMenu.style.left = event.clientX + 'px';
+    contextMenu.style.top = event.clientY + 'px';
+    contextMenu.style.display = 'block';
+  }
+});
+
+// Add event listener to hide the context menu
+document.addEventListener('mouseup', function(event) {
+  if (event.button === 2) {
+    var contextMenu = document.getElementById('context-menu');
+    contextMenu.style.display = 'none';
+  }
+});
+
+// Add event listener to hide the context menu on right-click outside of the map
+document.addEventListener('contextmenu', function(event) {
+  if (event.target.id !== 'world-map') {
+    var contextMenu = document.getElementById('context-menu');
+    contextMenu.style.display = 'none';
+  }
+});
+
+// Display the encounters on the map
+var encountersDiv = document.getElementById('encounters');
+for (var i = 0; i < encounters.length; i++) {
+  var encounter = encounters[i];
+  var encounterDiv = document.createElement('div');
+  encounterDiv.className = 'encounter';
+  encounterDiv.style.left = encounter.x + 'px';
+  encounterDiv.style.top = encounter.y+ 'px';
+  encountersDiv.appendChild(encounterDiv);
+}
+
+// Add context menu options based on the clicked location
+worldMap.addEventListener('contextmenu', function(event) {
+  var contextMenu = document.getElementById('context-menu');
+  var icon = getIconAt(event.clientX, event.clientY);
+  contextMenu.innerHTML = '';
+  if (icon === 'enemy') {
+    var option = document.createElement('div');
+    option.innerHTML = 'Attack';
+    contextMenu.appendChild(option);
+  } else if (icon === 'treasure') {
+    var option = document.createElement('div');
+    option.innerHTML = 'Open';
+    contextMenu.appendChild(option);
+  }
+});
+
+// Helper function to get the icon at a given position
+function getIconAt(x, y) {
+  var elements = document.elementsFromPoint(x, y);
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    if (element.className === 'encounter') {
+      return 'enemy';
+    } else if (element.className === 'treasure') {
+      return 'treasure';
+    }
+  }
+  return null;
+}
+    </script>
+  </body>
 </html>
