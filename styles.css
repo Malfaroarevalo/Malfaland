@@ -1,60 +1,83 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset some default styles in browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cabecera */
+/* Styles for the header */
 header {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+.logo img {
+    width: 150px;
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color:#fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
 }
 
-/* Sección de Computadores */
-#computadores {
-    background: #f4f4f4;
-    padding: 1em;
+/* Styles for the product section */
+.product-section {
+    background-color: #f9f9f9;
+    padding: 50px;
 }
 
 .configuracion {
-    border: 1px solid #ddd;
-    padding: 1em;
-    margin: 1em;
-}
-
-/* Sección de Comunidad */
-#comunidad {
-    padding: 1em;
-}
-
-/* Preguntas Frecuentes */
-#preguntas-frecuentes {
-    background: #f4f4f4;
-    padding: 1em;
-}
-
-/* Pie de página */
-footer {
+    max-width: 300px;
+    margin: 0 auto;
     text-align: center;
-    padding: 1em 0;
-    background: #333;
+}
+
+.configuracion img {
+    width: 100%;
+}
+
+.configuracion h3 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.configuracion p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Styles for the community section */
+#comunidad {
+    padding: 50px;
+}
+
+.sobre-nosotros, .reseñas {
+    margin-bottom: 30px;
+}
+
+/* Styles for the FAQ section */
+#preguntas-frecuentes {
+    background-color: #f9f9f9;
+    padding: 50px;
+}
+
+/* Styles for the footer */
+footer {
+    background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 20px;
 }
