@@ -1,170 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personaje del Sur Radiante</title>
+    <title>Generador de Personajes del Sur Radiante</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
         }
-        table {
+
+        h1 {
+            text-align: center;
+            color: #c62828; /* Rojo oscuro */
+        }
+
+        h2 {
+            color: #1565c0; /* Azul */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 5px;
+            margin-bottom: 10px;
             width: 100%;
-            border-collapse: collapse;
+            border: 1px solid #bdbdbd; /* Gris claro */
+            border-radius: 4px;
         }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
+
+        button {
+            padding: 8px 12px;
+            background-color: #1565c0; /* Azul */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0d47a1; /* Azul oscuro */
+        }
+
+        #characterDetails {
+            background-color: #ffffff; /* Blanco */
+            padding: 20px;
+            border: 1px solid #bdbdbd; /* Gris claro */
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <h1>Personaje del Sur Radiante</h1>
+    <div id="app">
+        <h1>Generador de Personajes del Sur Radiante</h1>
 
-    <h2>Ingresa los detalles de tu personaje:</h2>
-    <label for="playerName">Nombre del jugador:</label>
-    <input type="text" id="playerName">
-    <br>
-    <label for="characterName">Nombre del personaje:</label>
-    <input type="text" id="characterName">
-    <br>
-    <label for="characterLevel">Nivel del personaje:</label>
-    <input type="number" id="characterLevel">
-    <br>
-    <label for="surRadiante">Elige algo del sur radiante:</label>
-    <select id="surRadiante">
-        <option value="Ninguna">Ninguna</option>
-        <option value="Arma Radiante">Arma Radiante</option>
-        <option value="Piedra Luminosa">Piedra Luminosa</option>
-        <option value="Escudo Brillante">Escudo Brillante</option>
-        <!-- Agrega más opciones según lo que desees ofrecer en el sur radiante -->
-    </select>
-    <br>
-    <button onclick="generarPersonaje()">Generar Personaje</button>
+        <h2>Ingresa los detalles de tu personaje:</h2>
+        <label for="playerName">Nombre del jugador:</label>
+        <input type="text" id="playerName" v-model="characterDetails.playerName">
+        <br>
+        <label for="characterName">Nombre del personaje:</label>
+        <input type="text" id="characterName" v-model="characterDetails.characterName">
+        <br>
+        <label for="characterLevel">Nivel del personaje:</label>
+        <input type="number" id="characterLevel" v-model.number="characterDetails.level">
+        <br>
+        <label for="characterClass">Clase del personaje:</label>
+        <select id="characterClass" v-model="characterDetails.characterClass">
+            <option value="Fighter">Fighter</option>
+            <option value="Bard">Bard</option>
+            <!-- Agrega más opciones según las clases del manual del jugador -->
+        </select>
+        <br>
+        <label for="characterSubclass">Subclase del personaje:</label>
+        <select id="characterSubclass" v-model="characterDetails.characterSubclass">
+            <option value="Outlander">Outlander</option>
+            <option value="College of Lore">College of Lore</option>
+            <!-- Agrega más opciones según las subclases disponibles para cada clase -->
+        </select>
+        <br>
+        <button @click="generarPersonaje">Generar Personaje</button>
 
-    <h2>Detalles del personaje:</h2>
-    <table>
-        <tr>
-            <th>Class</th>
-            <th>Level</th>
-            <th>Background</th>
-            <th>Player Name</th>
-            <th>Character Name</th>
-        </tr>
-        <tr>
-            <td id="class">Fighter</td>
-            <td id="level">1</td>
-            <td id="background">Outlander</td>
-            <td id="player">Malgrom</td>
-            <td id="character">-</td>
-        </tr>
-    </table>
+        <!-- Información del personaje usando Vue.js -->
+        <div id="characterDetails">
+            <h2>Detalles del personaje:</h2>
+            <p><strong>Jugador:</strong> {{ characterDetails.playerName }}</p>
+            <p><strong>Nombre del personaje:</strong> {{ characterDetails.characterName }}</p>
+            <p><strong>Nivel:</strong> {{ characterDetails.level }}</p>
+            <p><strong>Experiencia:</strong> {{ characterDetails.experience }}</p>
+            <p><strong>Clase:</strong> {{ characterDetails.characterClass }}</p>
+            <p><strong>Subclase:</strong> {{ characterDetails.characterSubclass }}</p>
 
-    <h3>Attributes:</h3>
-    <table>
-        <tr>
-            <th>Race</th>
-            <th>Alignment</th>
-            <th>XP</th>
-            <th>Proficiency Bonus</th>
-        </tr>
-        <tr>
-            <td id="race">Human</td>
-            <td id="alignment">Neutral Good</td>
-            <td id="xp">100</td>
-            <td id="proficiencyBonus">+2</td>
-        </tr>
-    </table>
-
-    <h3>Abilities:</h3>
-    <table>
-        <tr>
-            <th>Str</th>
-            <th>Dex</th>
-            <th>Con</th>
-            <th>Int</th>
-            <th>Wis</th>
-            <th>Cha</th>
-        </tr>
-        <tr>
-            <td id="str">10 (+0)</td>
-            <td id="dex">14 (+2)</td>
-            <td id="con">14 (+2)</td>
-            <td id="int">8 (-1)</td>
-            <td id="wis">10 (+0)</td>
-            <td id="cha">12 (+1)</td>
-        </tr>
-    </table>
-
-    <h3>Combat Stats:</h3>
-    <table>
-        <tr>
-            <th>AC</th>
-            <th>Initiative</th>
-            <th>Speed</th>
-            <th>Passive Perception</th>
-        </tr>
-        <tr>
-            <td id="ac">12</td>
-            <td id="initiative">+2</td>
-            <td id="speed">30 ft.</td>
-            <td id="passivePerception">10</td>
-        </tr>
-    </table>
-
-    <h3>Weapons:</h3>
-    <ul id="weapons">
-        <li>Longsword: +4 to hit, reach 5 ft., one target, 1d8 + 2 slashing damage.</li>
-        <li>Handaxe: +4 to hit, reach 5 ft., one target, 1d6 + 2 slashing damage.</li>
-    </ul>
-
-    <h3>Personality Traits</h3>
-    <ul id="personalityTraits">
-        <li>I'm always willing to help a friend in need.</li>
-        <li>I'm always looking for a good story to tell.</li>
-        <li>I'm a bit of a loner, but I'm always willing to lend a hand.</li>
-    </ul>
-
-    <h3>Ideals</h3>
-    <ul id="ideals">
-        <li>Freedom: I believe that everyone should be free to live their own life, without interference from others.</li>
-        <li>Justice: I believe that everyone deserves to be treated fairly, regardless of their station in life.</li>
-    </ul>
-
-    <h3>Bonds</h3>
-    <ul id="bonds">
-        <li>I'm sworn to protect my family and friends.</li>
-        <li>I'm determined to find my place in the world.</li>
-        <li>I'm on a quest to avenge the death of a loved one.</li>
-    </ul>
-
-    <h3>Flaws</h3>
-    <ul id="flaws">
-        <li>I'm quick to anger.</li>
-        <li>I'm reckless and impulsive.</li>
-        <li>I'm too trusting of others.</li>
-    </ul>
-
-    <h3>Other Proficiencies &amp; Languages</h3>
-    <ul id="proficienciesLanguages">
-        <li>Languages: Common, Orcish</li>
-        <li>Skill Proficiencies: Athletics, Intimidation, Perception, Survival</li>
-    </ul>
+            <!-- Sección para el Sur Radiante -->
+            <h3>Sur Radiante</h3>
+            <label for="newObject">Nuevo Objeto:</label>
+            <input type="text" id="newObject" v-model="nuevoObjeto">
+            <button @click="agregarObjeto">Agregar Objeto</button>
+            <button @click="quitarObjeto">Quitar Último Objeto</button>
+            <ul>
+                <li v-for="(objeto, index) in characterDetails.objetos" :key="index">{{ objeto }}</li>
+            </ul>
+        </div>
+    </div>
 
     <script>
-        function generarPersonaje() {
-            const playerName = document.getElementById("playerName").value;
-            const characterName = document.getElementById("characterName").value;
-            const characterLevel = document.getElementById("characterLevel").value;
-            const surRadiante = document.getElementById("surRadiante").value;
+        new Vue({
+            el: "#app",
+            data: {
+                characterDetails: {
+                    playerName: "",
+                    characterName: "",
+                    level: 1,
+                    experience: 0,
+                    characterClass: "Fighter",
+                    characterSubclass: "Outlander",
+                    objetos: []
+                },
+                nuevoObjeto: "" // Almacenará el nombre del nuevo objeto ingresado por el usuario
+            },
+            methods: {
+                generarPersonaje() {
+                    // Código para calcular el nivel y la experiencia (como en las respuestas anteriores)
+                },
+                agregarObjeto() {
+                    if (this.nuevoObjeto !== "") {
+                        // Agregamos el nuevo objeto a la lista
+                        this.characterDetails.objetos.push(this.nuevoObjeto);
 
-            document.getElementById("player").textContent = playerName;
-            document.getElementById("character").textContent = characterName;
-            document.getElementById("level").textContent = characterLevel;
-
-            // Aquí puedes agregar más modificaciones o actualizaciones a los detalles del personaje según el sur radiante elegido.
-
-            alert("Personaje generado con éxito. ¡Disfruta de tus aventuras en el Sur Radiante!");
-        }
+                        // Limpiamos el campo del nuevo objeto
+                        this.nuevoObjeto = "";
+                    }
+                },
+                quitarObjeto() {
+                    // Quitamos el último objeto de la lista
+                    if (this.characterDetails.objetos.length > 0) {
+                        this.characterDetails.objetos.pop();
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
