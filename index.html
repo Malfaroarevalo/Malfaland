@@ -81,17 +81,25 @@
         <input type="number" id="characterLevel" v-model.number="characterDetails.level">
         <br>
         <label for="characterClass">Clase del personaje:</label>
-        <select id="characterClass" v-model="characterDetails.characterClass">
-            <option value="Fighter">Fighter</option>
-            <option value="Bard">Bard</option>
+        <select id="characterClass" v-model="characterDetails.characterClass" @change="updateSubclasses">
+            <option value="Bárbaro">Bárbaro</option>
+            <option value="Bardo">Bardo</option>
+            <option value="Clérigo">Clérigo</option>
+            <option value="Druida">Druida</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Monje">Monje</option>
+            <option value="Paladín">Paladín</option>
+            <option value="Explorador">Explorador</option>
+            <option value="Pícaro">Pícaro</option>
+            <option value="Hechicero">Hechicero</option>
+            <option value="Brujo">Brujo</option>
+            <option value="Mago">Mago</option>
             <!-- Agrega más opciones según las clases del manual del jugador -->
         </select>
         <br>
         <label for="characterSubclass">Subclase del personaje:</label>
         <select id="characterSubclass" v-model="characterDetails.characterSubclass">
-            <option value="Outlander">Outlander</option>
-            <option value="College of Lore">College of Lore</option>
-            <!-- Agrega más opciones según las subclases disponibles para cada clase -->
+            <option v-for="subclase in subclasesPorClase[characterDetails.characterClass]" :value="subclase">{{ subclase }}</option>
         </select>
         <br>
         <button @click="generarPersonaje">Generar Personaje</button>
@@ -127,11 +135,17 @@
                     characterName: "",
                     level: 1,
                     experience: 0,
-                    characterClass: "Fighter",
-                    characterSubclass: "Outlander",
+                    characterClass: "Bárbaro",
+                    characterSubclass: "",
                     objetos: []
                 },
-                nuevoObjeto: "" // Almacenará el nombre del nuevo objeto ingresado por el usuario
+                nuevoObjeto: "", // Almacenará el nombre del nuevo objeto ingresado por el usuario
+                subclasesPorClase: {
+                    "Bárbaro": ["Camino del Bersérker", "Camino del Guerrero Totémico", "Camino del Guerrero Ancestral"],
+                    "Bardo": ["Colegio de la Valor", "Colegio de la Sátira", "Colegio de la Espada"],
+                    "Clérigo": ["Dominio del Conocimiento", "Dominio de la Vida", "Dominio de la Luz"],
+                    // Agrega más clases y subclases según corresponda
+                }
             },
             methods: {
                 generarPersonaje() {
@@ -151,6 +165,9 @@
                     if (this.characterDetails.objetos.length > 0) {
                         this.characterDetails.objetos.pop();
                     }
+                },
+                updateSubclasses() {
+                    this.characterDetails.characterSubclass = "";
                 }
             }
         });
