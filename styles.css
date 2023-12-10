@@ -1,0 +1,172 @@
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 25px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #20232a; /* Fondo oscuro para el cuerpo */
+    color: #ffffff; /* Texto en blanco para mejorar la legibilidad */
+}
+
+/* Estilos para responsividad */
+@media screen and (max-width: 600px) {
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .parrafo-3d {
+        padding: 1rem;
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+}
+
+/* Estilos para el navbar */
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #333; /* Fondo oscuro para el navbar */
+    overflow: auto;
+    position: fixed; /* Navbar fijo en la parte superior */
+    top: 0;
+    z-index: 10;
+}
+/* Estilos para los enlaces normales */
+.navbar a, .footer a, .parrafo-3d a {
+    color: #61dafb; /* Color claro que brinda suficiente contraste y sigue el esquema de colores */
+    text-decoration: none; /* Remueve el subrayado por defecto */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transición suave para interacciones */
+}
+/* Estilos para los enlaces al pasar el mouse por encima */
+.navbar a:hover, .footer a:hover, .parrafo-3d a:hover {
+    color: #ffffff; /* Color más claro para el hover */
+    text-decoration: underline; /* Subraya el enlace al pasar el mouse para indicar interactividad */
+}
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: #61dafb; /* Color claro para los enlaces */
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Color de fondo para hover */
+    color: black; /* Color de texto para hover */
+}
+
+/* Search */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre el título y la barra de búsqueda */
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 20px;
+    width: 300px;
+}
+
+/* Presentation */
+.presentation {
+    text-align: center;
+}
+
+.presentation h1, .parrafo-3d h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #61dafb; /* Títulos en amarillo */
+    text-align: center; /* Alinear texto al centro */
+}
+
+.presentation h2, .parrafo-3d h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75em;
+    color: #61dafb; /* Subtítulos en amarillo */
+}
+
+.presentation h3, .parrafo-3d h3 {
+    font-size: 1.75rem; /* Tamaño de fuente para h3 */
+    margin-bottom: 0.5em; /* Espaciado debajo de h3 */
+    color: #61dafb; /* Subtítulos en amarillo */
+}
+.parrafo-3d p {
+    font-size: 1.05rem; /* Tamaño de fuente para h3 */
+    margin-bottom: 0.5em; /* Espaciado debajo de h3 */
+    color: #61dafb; /* Subtítulos en amarillo */
+    text-align: justify;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.parrafo-3d {
+    background-color: #333; /* Fondo oscuro para las tarjetas */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    width: calc(80% - 2rem);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parrafo-3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.parrafo-3d p {
+    color: #ffffff; /* Texto en blanco para párrafos */
+}
+
+/* Estilos para listas UL y LI */
+ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    padding: 0;
+    margin: 0 0 1em 0; /* Ajusta el margen según sea necesario */
+}
+
+li {
+    background: url('asdf.png') no-repeat left center; /* Icono personalizado para elementos de lista */
+    padding-left: 30px; /* Espacio para el icono */
+    margin-bottom: 0.5em; /* Espaciado entre elementos de lista */
+    line-height: 1.6; /* Altura de línea */
+    position: relative;
+}
+
+li a {
+    color: #61dafb; /* Cambiado a color claro para mejorar el contraste */
+    text-decoration: none; /* Quitar el subrayado */
+}
+
+li a:hover, li a:focus {
+    text-decoration: underline; /* Subrayar en hover para indicar interactividad */
+    color: #ffffff; /* Cambiar a blanco en hover para mantener consistencia */
+}
+
+.footer {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: #61dafb; /* Texto en color claro */
+    text-align: center;
+}
