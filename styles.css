@@ -21,6 +21,13 @@
     margin-top: 20px;  
   }
   
+  .col-md-6 img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* Navbar */
   .navbar {
     background-color: var(--dark-color);
@@ -36,8 +43,24 @@
       border-color: var(--primary-color); 
   }
   
-/* Estilos del carrusel */
-.carousel {
+  /* Estilos para imágenes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-container {
+    max-width: 600px; 
+    margin: 0 auto;
+  }
+  
+  .image-container img {
+    width: 100%;
+    display: block;
+  }
+
+  /* Estilos del carrusel */
+  .carousel {
     width: 100%; 
     height: auto;
     max-width: 800px; 
@@ -56,7 +79,7 @@
   }
 
   /* Servicios */
-.card { 
+  .card { 
     border: none;
     box-shadow: 0 2px 6px #ddd;
   }
@@ -68,34 +91,34 @@
   }  
 
   /* Sección Desarrollo Web */
-#webdev {
-  padding: 80px 0;
-}
+  #webdev {
+    padding: 80px 0;
+  }
 
-#webdev h1 {
-  margin-bottom: 20px; 
-}
+  #webdev h1 {
+    margin-bottom: 20px; 
+  }
 
-#webdev p {
-  color: #868e96;
-  width: 70%;
-  margin: 0 auto 20px;
-}
+  #webdev p {
+    color: #868e96;
+    width: 70%;
+    margin: 0 auto 20px;
+  }
 
-#webdev i {
-  color: var(--primary);
-  padding: 10px;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
-} 
+  #webdev i {
+    color: var(--primary);
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+  } 
 
 #webdev h3 {
   margin: 20px 0;
 }
 
-/* App Development Styles */
+  /* App Development Styles */
 
-#appdev {
+  #appdev {
     padding: 80px 0; 
   }
   
@@ -125,15 +148,8 @@
     margin: 20px 0;
   }
   
-  /* Media Queries */
-  @media (max-width: 992px) {
-    #appdev img { 
-      margin-bottom: 30px;
-    }
-  }
-
-/* Soporte Informático */
-#tech-support {
+  /* Soporte Informático */
+  #tech-support {
     padding: 80px 0;
   }
   
