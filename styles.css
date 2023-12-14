@@ -12,7 +12,11 @@
     background-color: var(--white-color);
     color: var(--dark-color);
   }
-  
+
+  h1, h2, h3, h4 {
+    color: var(--dark-color);  
+  }
+
   .container {
     margin-top: 20px;  
   }
@@ -50,7 +54,119 @@
     height: 100%;
     object-fit: cover;
   }
+
+  /* Servicios */
+.card { 
+    border: none;
+    box-shadow: 0 2px 6px #ddd;
+  }
   
+  /* Sobre el Técnico */  
+  #about img {
+    width: 8%;
+    height: 8%;
+  }  
+
+  /* Sección Desarrollo Web */
+#webdev {
+  padding: 80px 0;
+}
+
+#webdev h1 {
+  margin-bottom: 20px; 
+}
+
+#webdev p {
+  color: #868e96;
+  width: 70%;
+  margin: 0 auto 20px;
+}
+
+#webdev i {
+  color: var(--primary);
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+} 
+
+#webdev h3 {
+  margin: 20px 0;
+}
+
+/* App Development Styles */
+
+#appdev {
+    padding: 80px 0; 
+  }
+  
+  #appdev h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #appdev p {
+    color: #6c757d;
+    line-height: 1.6;
+  }
+  
+  #appdev h3 {
+    margin: 25px 0 15px;
+  }
+  
+  #appdev img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #aaa; 
+  }
+  
+  #appdev .btn-primary {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    margin: 20px 0;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 992px) {
+    #appdev img { 
+      margin-bottom: 30px;
+    }
+  }
+
+/* Soporte Informático */
+#tech-support {
+    padding: 80px 0;
+  }
+  
+  #tech-support h1 {
+    margin-bottom: 30px;  
+  }
+  
+  #tech-support h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }  
+  
+  #tech-support img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #aaa;
+  }
+  
+  #tech-support ul {
+    list-style: none; 
+    padding-left: 0;
+  }
+  
+  #tech-support li {
+    margin-bottom: 10px; 
+    color: #6c757d;
+  }
+  
+  #tech-support .btn-primary {
+    background-color: #61dafb;
+    border-color: #61dafb; 
+  }
+
   /* Estilos reutilizables */
   .text-dark {
     color: var(--dark-color); 
