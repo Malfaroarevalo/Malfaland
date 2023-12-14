@@ -143,20 +143,11 @@ Si deseas obtener más información sobre Malfaland, discutir posibilidades de c
 
 ¡Tus comentarios e ideas son siempre bienvenidos!
 
-## Capturas de Pantalla
-
-Aquí puedes ver un vistazo del entorno de desarrollo y la tecnología utilizada en Malfaland:
-
-![Entorno Moderno de Tecnología y Estudio](/Modern_technology_and_studio_environment,_featurin.png)
-
 ## Estado del Proyecto
 
 Estado actual: **En Progreso**
 
 Malfaland está en constante evolución. Aquí puedes ver una representación visual de nuestro sitio de construcción digital:
-
-![Sitio de Construcción Digital](/A_digital_construction_site_representing_an_ongoin.png)
-
 
 ## FAQs
 
