@@ -1,65 +1,67 @@
-/* Estilos generales */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa; /* Fondo claro para el cuerpo */
-    color: #343a40; /* Texto oscuro para mejorar la legibilidad */
-}
-
-.container {
-    margin-top: 20px;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #343a40; /* Fondo oscuro para el navbar */
-}
-
-.navbar-dark .navbar-brand,
-.navbar-dark .navbar-nav .nav-link {
-    color: #61dafb; /* Color claro que brinda suficiente contraste y sigue el esquema de colores */
-}
-
-.navbar-dark .navbar-toggler-icon {
-    background-color: #61dafb; /* Color del icono del botón de navegación */
-}
-
-.navbar-dark .navbar-toggler {
-    border-color: #61dafb; /* Color del borde del botón de navegación */
-}
-
-/* Carousel (elemento interactivo) */
-.carousel-inner img {
+/* Variables para los colores */
+:root {
+    --primary-color: #61dafb;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa; 
+    --white-color: #fff;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--white-color);
+    color: var(--dark-color);
+  }
+  
+  .container {
+    margin-top: 20px;  
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--dark-color);
+  }
+  
+  .navbar-dark .navbar-brand, 
+  .navbar-dark .navbar-nav .nav-link {
+      color: var(--primary-color);
+  }
+  
+  .navbar-dark .navbar-toggler-icon,
+  .navbar-dark .navbar-toggler {
+      border-color: var(--primary-color); 
+  }
+  
+  /* Carousel */
+  .carousel-inner img {
     width: 100%;
     height: auto;
-}
-
-/* Resumen de servicios */
-h2 {
-    color: #343a40; /* Color de los subtítulos */
-}
-
-/* Lista de servicios */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Botones y estilos para servicios específicos */
-.btn-service {
-    background-color: #61dafb;
-    color: #343a40;
-    border: 1px solid #61dafb;
-}
-
-/* Footer */
-.footer {
+  }  
+  
+  /* Estilos reutilizables */
+  .text-dark {
+    color: var(--dark-color); 
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border: 1px solid var(--primary-color);  
+  }
+  
+  /* Footer */
+  .footer {
     width: 100%;
-    padding: 1rem 0;
-    background-color: #343a40; /* Fondo oscuro para el footer */
-    color: #61dafb; /* Texto en color claro */
-    text-align: center;
-}
+    padding: 1rem 0; 
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+    text-align: center;  
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 1.5rem;
+      font-size: .9rem; 
+    }
+  }
