@@ -1,264 +1,293 @@
+
 /* Variables para los colores */
 :root {
     --primary-color: #61dafb;
     --dark-color: #343a40;
     --light-color: #f8f9fa; 
     --white-color: #fff;
-  }
-  
-  /* Estilos generales */
-  body {
-    font-family: 'Roboto', sans-serif; 
-    background-color: var(--white-color);
-    color: var(--dark-color);
-  }
-
-  h1, h2, h3, h4 {
-    color: var(--dark-color);  
-  }
-
-  .container {
-    margin-top: 20px;  
-  }
-  
-  .col-md-6 img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Navbar */
-  .navbar {
-    background-color: var(--dark-color);
-  }
-  
-  .navbar-dark .navbar-brand, 
-  .navbar-dark .navbar-nav .nav-link {
-      color: var(--primary-color);
-  }
-  
-  .navbar-dark .navbar-toggler-icon,
-  .navbar-dark .navbar-toggler {
-      border-color: var(--primary-color); 
-  }
-  
-  /* Estilos para imágenes */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .image-container {
-    max-width: 600px; 
-    margin: 0 auto;
-  }
-  
-  .image-container img {
-    width: 100%;
-    display: block;
-  }
-
-  /* Estilos del carrusel */
-  .carousel {
-    width: 100%; 
-    height: auto;
-    max-width: 800px; 
-    margin: 0 auto;
-  }
-  
-  .carousel-inner {
-    height: 300px;
-    overflow: hidden;  
-  }
-  
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Servicios */
-  .card { 
-    border: none;
-    box-shadow: 0 2px 6px #ddd;
-  }
-  
-  /* Sobre el Técnico */  
-  #about img {
-    width: 8%;
-    height: 8%;
-  }  
-
-  /* Sección Desarrollo Web */
-  #webdev {
-    padding: 80px 0;
-  }
-
-  #webdev h1 {
-    margin-bottom: 20px; 
-  }
-
-  #webdev p {
-    color: #868e96;
-    width: 70%;
-    margin: 0 auto 20px;
-  }
-
-  #webdev i {
-    color: var(--primary-color);
-    padding: 10px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-  } 
-
-#webdev h3 {
-  margin: 20px 0;
 }
 
-  /* App Development Styles */
+/* Variables para los colores */
+:root {
+  --primary-color: #61dafb;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa; 
+  --white-color: #fff;
+}
 
-  #appdev {
-    padding: 80px 0; 
-  }
-  
-  #appdev h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  #appdev p {
-    color: #6c757d;
-    line-height: 1.6;
-  }
-  
-  #appdev h3 {
-    margin: 25px 0 15px;
-  }
-  
-  #appdev img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px #aaa; 
-  }
-  
-  #appdev .btn-primary {
-    background-color: #61dafb;
-    border-color: #61dafb;
-    margin: 20px 0;
-  }
-  
-  /* Soporte Informático */
-  #tech-support {
-    padding: 80px 0;
-  }
-  
-  #tech-support h1 {
-    margin-bottom: 30px;  
-  }
-  
-  #tech-support h3 {
-    font-size: 20px;
-    margin-bottom: 25px;
-  }  
-  
-  #tech-support img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px #aaa;
-  }
-  
-  #tech-support ul {
-    list-style: none; 
-    padding-left: 0;
-  }
-  
-  #tech-support li {
-    margin-bottom: 10px; 
-    color: #6c757d;
-  }
-  
-  #tech-support .btn-primary {
-    background-color: #61dafb;
-    border-color: #61dafb; 
-  }
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif; 
+  background-color: var(--white-color);
+  color: var(--dark-color);
+}
 
-  /* Estilos reutilizables */
-  .text-dark {
-    color: var(--dark-color); 
-  }
-  
-  .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-    border: 1px solid var(--primary-color);  
-  }
-  
-  /* COntact form */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
+h1, h2, h3, h4 {
+  color: var(--dark-color);  
+}
 
-  .contact-form label {
-    margin-bottom: 10px;
-  }
+.container {
+  margin-top: 20px;  
+}
 
-  .contact-form input,
-  .contact-form textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+.col-md-6 img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-  .contact-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+/* Navbar */
+.navbar {
+  background-color: var(--dark-color);
+}
 
-  .contact-form input[type="submit"]:hover {
-    background-color: #444;
-  }
-  #contactForm {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-
-  #contactForm label {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  #contactForm input,
-  #contactForm textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-
-  /* Footer */
-  .footer {
-    width: 100%;
-    padding: 1rem 0; 
-    background-color: var(--dark-color);
+.navbar-dark .navbar-brand, 
+.navbar-dark .navbar-nav .nav-link {
     color: var(--primary-color);
-    text-align: center;  
+}
+
+.navbar-dark .navbar-toggler-icon,
+.navbar-dark .navbar-toggler {
+    border-color: var(--primary-color); 
+}
+/* ModalForm */
+#contratacionModal {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1000; 
+width: 70%;
+max-width: 500px; 
+margin: auto;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+#contratacionModal .modal-content {
+padding: 20px; 
+}
+
+@media (max-width: 768px) {
+#contratacionModal {
+    width: 80%; 
+}
+}
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+  max-width: 600px; 
+  margin: 0 auto;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+}
+
+/* Estilos del carrusel */
+.carousel {
+  width: 100%; 
+  height: auto;
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  height: 300px;
+  overflow: hidden;  
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Servicios */
+.card {
+  border: 2px solid transparent; /* Añade un borde transparente inicial */
+  transition: border-color 0.3s ease-in-out; /* Agrega una transición suave al cambio de color del borde */
+  box-shadow: 0 2px 6px #ddd;
+}
+
+.card:hover {
+    border-color: #61dafb; /* Color que resalta cuando pasas el mouse sobre la tarjeta */
+}
+
+/* Sobre el Técnico */  
+#about img {
+  width: 8%;
+  height: 8%;
+}  
+
+/* Sección Desarrollo Web */
+#webdev {
+  padding: 80px 0;
+}
+
+#webdev h1 {
+  margin-bottom: 20px; 
+}
+
+#webdev p {
+  color: #868e96;
+  width: 70%;
+  margin: 0 auto 20px;
+}
+
+#webdev i {
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+} 
+
+#webdev h3 {
+margin: 20px 0;
+}
+
+/* Estilos reutilizables */
+.text-dark {
+  color: var(--dark-color); 
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border: 1px solid var(--primary-color);  
+}
+
+/* Contact form */
+.contact-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+}
+
+.contact-form label {
+margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-bottom: 10px;
+}
+
+.contact-form input[type="submit"] {
+background-color: var(--primary-color);
+color: var(--dark-color);
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+background-color: #444;
+}
+
+#contactForm {
+background-color: #f8f8f8;
+padding: 20px;
+border-radius: 8px;
+margin-top: 10px;
+}
+
+#contactForm label {
+display: block;
+margin-bottom: 5px;
+}
+
+#contactForm input,
+#contactForm textarea {
+width: 100%;
+padding: 8px;
+box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  padding: 1rem 0; 
+  background-color: var(--dark-color);
+  color: var(--primary-color);
+  text-align: center;  
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+    font-size: .9rem; 
   }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .footer {
-      padding: 1.5rem;
-      font-size: .9rem; 
-    }
+}
+
+/* Custom styles for modern web design trends */
+/* Y2K Aesthetic: Retro typeface and pixelation */
+@font-face {
+  font-family: 'Retro';
+  src: url('path-to-your-retro-font.woff2') format('woff2'); /* Add the correct path to your retro font file */
+}
+
+/* Custom Cursors */
+body, a, button {
+  cursor: url('path-to-your-custom-cursor.png'), auto; /* Add the correct path to your custom cursor image file */
+}
+
+/* Custom Typefaces for headers and buttons */
+h1, h2, h3, h4, .btn {
+  font-family: 'Retro', 'Roboto', sans-serif;
+}
+
+/* Dimensional Illustrations */
+.icon-with-depth {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Just for Fun Interactions: Hover effects */
+.btn:hover, .icon-with-depth:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Loading Animations */
+.loading-animation {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #61dafb;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust modal width for smaller devices */
+  #contratacionModal {
+    width: 90%;
   }
+
+  /* Ensure the form takes full width of the modal on smaller screens */
+  #contratacionForm {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
