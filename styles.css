@@ -1,18 +1,18 @@
-
-/* Variables para los colores */
-:root {
-    --primary-color: #61dafb;
-    --dark-color: #343a40;
-    --light-color: #f8f9fa; 
-    --white-color: #fff;
-}
-
 /* Variables para los colores */
 :root {
   --primary-color: #61dafb;
   --dark-color: #343a40;
   --light-color: #f8f9fa; 
   --white-color: #fff;
+}
+
+.text-containers {
+  display: flex;
+}
+
+.text-container {
+  flex: 1; 
+  padding: 20px;
 }
 
 /* Estilos generales */
@@ -24,6 +24,10 @@ body {
 
 h1, h2, h3, h4 {
   color: var(--dark-color);  
+}
+
+p {
+  text-align: left;
 }
 
 .container {
