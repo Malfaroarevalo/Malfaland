@@ -26,7 +26,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Contenido de la página de servicios -->
     <div class="container mt-5">
         <section id="services">
@@ -41,7 +40,7 @@
                             Formateo y reinstalación de sistema operativo. Backup previo de archivos.
                         </p>
                         <h3>$30.000</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                     </div>
@@ -51,10 +50,10 @@
                         <div class="card-body">
                         <h4 class="card-title">Limpieza de Virus</h4>
                         <p class="card-text">
-                            Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.
+                            AcEscaneo y desinfección profunda para eliminar virus y mejorar rendimiento.
                         </p>
                         <h3>$25.000</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                     </div>
@@ -67,8 +66,8 @@
                         Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.
                     </p>
                     <h3>$40.000</h3>
-                    <button class="btn-primary" onclick="contratar()">Contratar</button>
-                </div>
+                    <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
                 </div>
                 </div>
         
@@ -80,8 +79,8 @@
                         Recuperación de datos perdidos o eliminados accidentalmente.
                     </p>  
                     <h3>$50.000</h3>
-                    <button class="btn-primary" onclick="contratar()">Contratar</button>
-                </div>
+                    <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
                 </div>
                 </div>
 
@@ -93,7 +92,7 @@
                             Instalación y configuración de redes para una conectividad estable.
                         </p>  
                         <h3>$35.000</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +105,7 @@
                             Servicio regular para prevenir problemas futuros y mantener el sistema en óptimas condiciones.
                         </p>  
                         <h3>$25.000</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -119,7 +118,7 @@
                             Evaluación y recomendaciones para mejorar la seguridad digital.
                         </p>  
                         <h3>$30.000</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +131,7 @@
                             Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.
                         </p>  
                         <h3>$20.000 Mensuales</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -145,7 +144,7 @@
                             Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.
                         </p>  
                         <h3>$15.000 por sesión</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +157,7 @@
                             Instalación y configuración de impresoras, escáneres y otros periféricos.
                         </p>  
                         <h3>$25.000 por dispositivo</h3>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +170,7 @@
                             Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.
                         </p>  
                         <h4>$40.000 mensuales.</h4>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
+                        <a href="#" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
@@ -184,8 +183,8 @@
                             Instalación y configuración de software especializado según las necesidades del cliente.
                         </p>  
                         <h4>Variable según la complejidad del software.</h4>
-                        <button class="btn-primary" onclick="contratar()">Contratar</button>
-                    </div>
+                        <a href="#" class="btn btn-primary">Contratar</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -193,89 +192,12 @@
             </div>
         
         </section>
-    </div>
-
-    <div class="modal">
-        <div class="modal-body">
-            <h2 class="text-center mb-5">Formulario de Contratación</h2>
-            <form id="contratacionForm">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
-                </div>
-                <div class="form-group">
-                    <label for="emailForm">Correo electrónico</label>
-                    <input type="email" class="form-control" id="emailForm" placeholder="Ingrese su correo electrónico">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Número de teléfono</label>
-                    <input type="tel" class="form-control" id="phone" placeholder="Ingrese su número de teléfono">
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea class="form-control" id="message" placeholder="Ingrese su mensaje"></textarea>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="sendForm()">Enviar</button>
-                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
-            </form>
+            </ul>
         </div>
     </div>
-    
+
+    <!-- Agrega el script de Bootstrap al final del body -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function contratar() {
-            // Agrega tu lógica de contratación aquí
-            alert("¡Gracias por tu interés en nuestros servicios!");
-        }
-    
-        function openModal() {
-            document.querySelector('.modal').style.display = 'block';
-        }
-    
-        function closeModal() {
-            document.querySelector('.modal').style.display = 'none';
-        }
-    
-        function sendForm() {
-            // Obtener los datos del formulario
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('emailForm').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-    
-            // Validar que los campos no estén vacíos (puedes agregar más validaciones según tus necesidades)
-            if (!name || !email || !phone || !message) {
-                alert("Por favor, complete todos los campos del formulario.");
-                return;
-            }
-    
-            // Objeto con los datos del formulario
-            const formData = {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            };
-    
-            // Simulando el envío de datos al servidor (puedes reemplazar esto con tu lógica de envío real)
-            fetch('https://tu-servidor.com/tu-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert("Formulario enviado correctamente");
-                closeModal(); // O cierra el modal si lo prefieres
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Hubo un error al enviar el formulario. Por favor, inténtalo nuevamente.");
-            });
-        }
-    </script>
-    
+
 </body>
 </html>

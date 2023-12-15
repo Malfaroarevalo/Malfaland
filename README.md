@@ -1,29 +1,30 @@
 # Malfaland
 
 ## Descripción
-Descripción de "Malfaland"
-Malfaland es un proyecto interactivo de desarrollo web alojado en GitHub Pages. Diseñado para mostrar las habilidades y creatividad en el uso de HTML, CSS y JavaScript, Malfaland representa una combinación de diseño web moderno y funcionalidades dinámicas.
+
+Malfaland es un proyecto interactivo de desarrollo web alojado en GitHub Pages. Diseñado para mostrar habilidades y creatividad en el uso de HTML, CSS y JavaScript, representa una combinación de diseño web moderno y funcionalidades dinámicas.
 
 ### Características Principales:
 
 1. **Demostración de Desarrollo Web**: Malfaland sirve como una vitrina de habilidades en HTML, CSS y JavaScript, presentando un diseño web estéticamente agradable y técnicamente competente.
 
 2. **Experiencia de Usuario Interactiva**: El sitio incluye elementos interactivos, demostrando cómo JavaScript puede ser utilizado para mejorar la experiencia del usuario.
-    
+
 3. **Diseño Responsivo**: Adaptado para una visualización óptima en una variedad de dispositivos, Malfaland utiliza técnicas de diseño responsivo para asegurar una buena experiencia de usuario en teléfonos móviles, tabletas y computadoras de escritorio.
-    
+
 4. **Código Abierto para Aprendizaje y Colaboración**: Al estar alojado en GitHub, Malfaland invita a otros desarrolladores a explorar, aprender y potencialmente contribuir al código, fomentando un entorno de colaboración y crecimiento compartido.
 
-Visita **Malfaland**: Explora este proyecto en https://malfaroarevalo.github.io/Malfaland/.
+Visita [Malfaland](https://malfaroarevalo.github.io/Malfaland/).
 
 ## Instalación
+
 ### Pre-requisitos
 
-1. **Navegador Web Moderno**: Para ver y probar el proyecto, se requiere un navegador web actualizado como Google Chrome, Mozilla Firefox, Safari o Microsoft Edge.
+1. **Navegador Web Moderno**: Se requiere un navegador web actualizado como Google Chrome, Mozilla Firefox, Safari o Microsoft Edge.
 
 2. **Editor de Código**: Un editor de texto o entorno de desarrollo integrado (IDE) para editar el código fuente. Algunas opciones populares son Visual Studio Code, Sublime Text o Atom.
 
-3. **Git**: Para clonar el repositorio y gestionar las versiones del código fuente. Descargar Git.
+3. **Git**: Para clonar el repositorio y gestionar las versiones del código fuente. [Descargar Git](https://git-scm.com/downloads).
 
 4. **Conexión a Internet**: Necesaria para acceder a los recursos en línea y a la documentación, y para ver el sitio en GitHub Pages.
 
@@ -33,30 +34,29 @@ Visita **Malfaland**: Explora este proyecto en https://malfaroarevalo.github.io/
 
 1. **Clonar el Repositorio**
 
-- Abre la terminal o la línea de comandos en tu computadora.
-- Utiliza el comando git clone seguido de la URL del repositorio. Por ejemplo:
-    - git clone https://github.com/malfaroarevalo/Malfaland.git
-- Esto creará una copia local del proyecto en tu máquina.
+   - Abre la terminal o la línea de comandos en tu computadora.
+   - Utiliza el comando `git clone` seguido de la URL del repositorio. Por ejemplo:
+     - `git clone https://github.com/malfaroarevalo/Malfaland.git`
+   - Esto creará una copia local del proyecto en tu máquina.
 
 2. **Abrir el Proyecto**
 
-- Navega hasta la carpeta del proyecto clonado.
-- Abre los archivos del proyecto (HTML, CSS, JavaScript) en tu editor de código preferido.
+   - Navega hasta la carpeta del proyecto clonado.
+   - Abre los archivos del proyecto (HTML, CSS, JavaScript) en tu editor de código preferido.
 
 3. **Visualizar el Proyecto**
 
-- Para ver el sitio web, simplemente abre el archivo index.html en tu navegador web.
-- Puedes hacerlo haciendo doble clic en el archivo o arrastrándolo a tu navegador.
-
+   - Para ver el sitio web, simplemente abre el archivo `index.html` en tu navegador web.
+   - Puedes hacerlo haciendo doble clic en el archivo o arrastrándolo a tu navegador.
 4. **Modificar y Experimentar**
 
-- Siéntete libre de modificar los archivos y experimentar con el código.
-- Puedes ver los cambios reflejados en tiempo real recargando la página en tu navegador.
+   - Siéntete libre de modificar los archivos y experimentar con el código.
+   - Puedes ver los cambios reflejados en tiempo real recargando la página en tu navegador.
 
 5. **Actualizar el Repositorio (opcional)**
 
-- Si deseas contribuir al proyecto, realiza tus cambios y luego usa git commit para confirmarlos.
-- Después, puedes subir los cambios a GitHub con git push si tienes permisos de escritura en el repositorio.
+   - Si deseas contribuir al proyecto, realiza tus cambios y luego usa `git commit` para confirmarlos.
+   - Después, puedes subir los cambios a GitHub con `git push` si tienes permisos de escritura en el repositorio.
 
 ## Uso
 
@@ -118,7 +118,6 @@ Gracias por tu interés en mejorar Malfaland!
 
 - **Diseño Web Responsivo**: Más que un simple truco; es una filosofía. Gracias al enfoque responsivo, Malfaland es tan flexible como el bambú, adaptándose sin esfuerzo a cualquier tamaño de pantalla, desde el más pequeño smartphone hasta el más grande monitor de escritorio.
 
-
 ¡Cada una de estas tecnologías es una estrella en la constelación de Malfaland, trabajando juntas para crear un universo digital donde la innovación y la creatividad brillan más fuerte!
 
 ## Licencia
@@ -137,9 +136,9 @@ Si deseas obtener más información sobre Malfaland, discutir posibilidades de c
 
 - **Abre un Issue en GitHub**: Para preguntas generales o discusiones relacionadas con el proyecto, considera abrir un [issue en el repositorio de Malfaland](https://github.com/malfaroarevalo/Malfaland/issues).
 
-- **Solicitudes de Pull**: Si tienes mejoras específicas o correcciones para proponer, siente libre de enviar un [pull request](https://github.com/malfaroarevalo/Malfaland/pulls).
+- **Solicitudes de Pull**: Si tienes mejoras específicas o correcciones para proponer, siéntete libre de enviar un [pull request](https://github.com/malfaroarevalo/Malfaland/pulls).
 
-- **Redes Sociales o Plataformas Profesionales**: Puedes seguirme o contactarme a través de plataformas profesionales o redes sociales. ([Manuel_Alfaro]https://www.linkedin.com/in/malfaroarevalo/).
+- **Redes Sociales o Plataformas Profesionales**: Puedes seguirme o contactarme a través de plataformas profesionales o redes sociales. [LinkedIn de Manuel Alfaro](https://www.linkedin.com/in/malfaroarevalo/).
 
 ¡Tus comentarios e ideas son siempre bienvenidos!
 
@@ -167,3 +166,12 @@ Aquí respondemos a algunas de las preguntas más comunes sobre Malfaland:
 
 5. **P: ¿Dónde puedo ver el sitio web en acción?**  
    R: Puedes visitar Malfaland en [https://malfaroarevalo.github.io/Malfaland/](https://malfaroarevalo.github.io/Malfaland/).
+
+6. **P: ¿Cómo puedo informar sobre problemas o sugerir mejoras?**  
+   R: Si encuentras errores o tienes ideas para mejoras, abre un 'issue' en el [repositorio de GitHub](https://github.com/malfaroarevalo/Malfaland/issues).
+
+7. **P: ¿Puedo contribuir si no soy un desarrollador experimentado?**  
+   R: ¡Absolutamente! Se aprecian contribuciones de todo tipo, desde reportar errores hasta sugerir ideas creativas. No se requiere experiencia previa.
+
+8. **P: ¿Cómo puedo mantenerme actualizado sobre las novedades de Malfaland?**  
+   R: Para recibir actualizaciones y noticias, puedes seguir el [repositorio de GitHub](https://github.com/malfaroarevalo/Malfaland) y participar en las discusiones.
