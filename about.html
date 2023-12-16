@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -26,97 +25,131 @@
             </div>
         </div>
     </nav>
-    <section id="about">
-        <div class="container">
+<section id="about">
+    <div class="card-body">
         <div class="text-center">
             <img src="img/profile.png" class="rounded-circle"> 
             <h1>Manuel Alfaro</h1>
             <h2>Desarrollador Web & Soporte Técnico</h2>
+            <button class="btn btn-primary" type="submit" onclick="contactar()">Contactar</button>
         </div>
-
-            <div class="container text-center">
-                <div class="text-center mt-5">
-                    <button class="btn btn-primary" type="submit" onclick="toggleForm()">Contactar</button>
-
-                </div>
-    
-                <div id="contactForm" style="display: none;">
-                    <form id="contratacionForm" action="https://formspree.io/f/xkndwnbw" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="emailForm">Correo electrónico</label>
-                            <input type="email" class="form-control" id="emailForm" name="email" placeholder="Ingrese su correo electrónico" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Número de teléfono</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea class="form-control" id="message" name="message" placeholder="Ingrese su mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                        <button type="button" class="btn btn-secondary" id="closeModalButton" onclick="closeModal()">Cerrar</button>
-                    </form>
-                </div>
+    </div>
+    <!-- Modal Form -->
+    <div class="modal" id="contratacionModal" style="display: none;">
+        <div class="modal-body">
+            <div class="card mb-3">
+                <h2 class="text-center mb-5">Contratar Servicios</h2>
+                <form id="contratacionForm" action="https://formspree.io/f/xkndwnbw" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailForm">Correo electrónico</label>
+                        <input type="email" class="form-control" id="emailForm" name="email" placeholder="Ingrese su correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Número de teléfono</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea class="form-control" id="message" name="message" placeholder="Ingrese su mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-secondary" id="closeModalButton" onclick="closeModal()">Cerrar</button>
+                </form>
             </div>
-
-    </section>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Experiencia Laboral</h2>
-                    <ul>
-                        <li><strong>Servicio técnico Independiente en Malfaland, Curicó:</strong> En esta etapa, me enfoqué en el servicio técnico, brindando 
-                            asistencia y reparaciones de alta calidad para una amplia gama de dispositivos informáticos, asegurando la satisfacción y fidelidad de los clientes.</li>
-                        <li><strong>Servicio Postventa en Constructora Galilea, Curicó:</strong> Responsable de gestionar y asegurar la calidad del servicio 
-                            postventa, me centré en garantizar la satisfacción del cliente y en mantener los estándares de servicio de la empresa.</li>
-                        <li><strong>Asistente Documental en El Cisne, Curicó:</strong> Mi rol consistió en administrar y organizar documentos importantes, 
-                            asegurando la precisión y la eficiencia en el manejo de la información crítica de la empresa.</li>
-                        <li><strong>Auditor Nocturno en Hotel Radisson Curicó, Curicó:</strong> Esta posición me permitió desarrollar habilidades en auditoría 
-                            y administración hotelera, asegurando la correcta gestión de las operaciones nocturnas del hotel.</li>
-                        <li><strong>Analista Documental en Copefrut, Curicó:</strong> Como analista, me dediqué a la evaluación y gestión de documentos, 
-                            desempeñando un papel clave en el mantenimiento de la integridad y exactitud de la información empresarial.</li>
-                        <li><strong>Asistente Documental en Frule, Curicó:</strong> En esta función, me encargué de la gestión documental, apoyando en 
-                            la organización y el procesamiento eficiente de la documentación empresarial.</li>
-                        <li><strong>Recepcionista en Hotel Raíces, Curicó:</strong> Como primer punto de contacto para los huéspedes, proporcioné un 
-                            servicio excepcional, gestionando reservas y asegurando una experiencia acogedora y profesional.</li>
-                    </ul>
-            </div>
-            <div class="col-md-4 order-md-2">
-                <h3>Lenguajes de Programación y Desarrollo</h3>
-                <ul>
-                    <li><strong>Java:</strong> Conocimientos básicos - Familiarizado con conceptos fundamentales y aplicaciones sencillas</li>
-                    <li><strong>C/C++:</strong> Conocimientos básicos - Fundamentos de programación en C y C++, con potencial de desarrollo futuro</li>
-                    <li><strong>Python:</strong> Conocimientos básicos - Comprensión de sintaxis y estructuras de datos, experiencia inicial con Jupyter Notebook</li>
-                    <li><strong>Ruby on Rails:</strong> Conocimientos básicos - Introducción al framework y arquitectura MVC</li>
-                    <li><strong>HTML/CSS/JavaScript:</strong> Conocimientos prácticos - Capacidad para construir páginas web estáticas y dinámicas básicas</li>
-                </ul>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Lenguajes de Programación y Desarrollo</h3>
+                        <ul>
+                            <li><strong>Java:</strong> Conocimientos básicos - Familiarizado con conceptos fundamentales y aplicaciones sencillas</li>
+                            <li><strong>C/C++:</strong> Conocimientos básicos - Fundamentos de programación en C y C++, con potencial de desarrollo futuro</li>
+                            <li><strong>Python:</strong> Conocimientos básicos - Comprensión de sintaxis y estructuras de datos, experiencia inicial con Jupyter Notebook</li>
+                            <li><strong>Ruby on Rails:</strong> Conocimientos básicos - Introducción al framework y arquitectura MVC</li>
+                            <li><strong>HTML/CSS/JavaScript:</strong> Conocimientos prácticos - Capacidad para construir páginas web estáticas y dinámicas básicas</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4 order-md-1">
-                <h3>Desarrollo Móvil</h3>
-                    <ul>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Experiencia Laboral</h2>
+                        <ul>
+                        <li><strong>Servicio técnico Independiente en Malfaland, Curicó:</strong> En esta etapa, me enfoqué en el servicio técnico, brindando 
+                        asistencia y reparaciones de alta calidad para una amplia gama de dispositivos informáticos, asegurando la satisfacción y fidelidad de los clientes.</li>
+                        <li><strong>Servicio Postventa en Constructora Galilea, Curicó:</strong> Responsable de gestionar y asegurar la calidad del servicio 
+                        postventa, me centré en garantizar la satisfacción del cliente y en mantener los estándares de servicio de la empresa.</li>
+                        <li><strong>Asistente Documental en El Cisne, Curicó:</strong> Mi rol consistió en administrar y organizar documentos importantes, 
+                        asegurando la precisión y la eficiencia en el manejo de la información crítica de la empresa.</li>
+                        <li><strong>Auditor Nocturno en Hotel Radisson Curicó, Curicó:</strong> Esta posición me permitió desarrollar habilidades en auditoría 
+                        y administración hotelera, asegurando la correcta gestión de las operaciones nocturnas del hotel.</li>
+                        <li><strong>Analista Documental en Copefrut, Curicó:</strong> Como analista, me dediqué a la evaluación y gestión de documentos, 
+                        desempeñando un papel clave en el mantenimiento de la integridad y exactitud de la información empresarial.</li>
+                        <li><strong>Asistente Documental en Frule, Curicó:</strong> En esta función, me encargué de la gestión documental, apoyando en 
+                        la organización y el procesamiento eficiente de la documentación empresarial.</li>
+                        <li><strong>Recepcionista en Hotel Raíces, Curicó:</strong> Como primer punto de contacto para los huéspedes, proporcioné un 
+                        servicio excepcional, gestionando reservas y asegurando una experiencia acogedora y profesional.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 order-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Desarrollo Móvil</h3>
+                        <ul>
                         <li><strong>Java:</strong> Conocimientos básicos - Familiarizado con conceptos fundamentales y aplicaciones sencillas</li>
                         <li><strong>C/C++:</strong> Conocimientos básicos - Fundamentos de programación en C y C++, con potencial de desarrollo futuro</li>
                         <li><strong>Python:</strong> Conocimientos básicos - Comprensión de sintaxis y estructuras de datos, experiencia inicial con Jupyter Notebook</li>
                         <li><strong>Ruby on Rails:</strong> Conocimientos básicos - Introducción al framework y arquitectura MVC</li>
                         <li><strong>HTML/CSS/JavaScript:</strong> Conocimientos prácticos - Capacidad para construir páginas web estáticas y dinámicas básicas</li>
-                    </ul>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Agrega el script de Bootstrap al final del body -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Agrega tu script para mostrar/ocultar el formulario -->
-    <script>
-        function toggleForm() {
-            var form = document.getElementById('contactForm');
-            form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
-        }
-    </script>
+</section>
+<!-- Agrega el script de Bootstrap al final del body -->
+<!-- Inicio Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+var contratarButtons = document.querySelectorAll('.btn.btn-primary');
+contratarButtons.forEach(function(button) {
+button.addEventListener('click', openModal);
+});
+var closeModalButton = document.getElementById('closeModalButton');
+if (closeModalButton) {
+closeModalButton.addEventListener('click', closeModal);
+}
+});
+function openModal() {
+console.log('Abriendo modal');
+document.getElementById('contratacionModal').style.display = 'block';
+}
+function closeModal() {
+console.log('Cerrando modal');
+document.getElementById('contratacionModal').style.display = 'none';
+}
+function sendForm() {
+alert("¡Gracias por tu interés en nuestros servicios!");
+closeModal();
+}
+</script>
+<script>
+function toggleForm() {
+var form = document.getElementById('contactForm');
+form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
