@@ -1,6 +1,6 @@
 /* Variables para los colores */
 :root {
-  --primary-color: #61dafb;
+  --primary-color: #00c8ff;
   --dark-color: #010722;
   --light-color: #d0dae4;
   --white-color: #fff;
@@ -86,12 +86,32 @@ img, .carousel-inner img {
   border: 2px solid transparent;
   transition: border-color 0.3s ease-in-out;
   box-shadow: 0 2px 6px #ddd;
+  min-height: 25%; /* Ajusta este valor según sea necesario */
 }
 
 .card:hover {
   border-color: #61dafb;
 }
 
+.card-img-top {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  margin-bottom: 15px; /* Espacio entre la imagen y el texto debajo */
+
+}
+.card-title {
+  text-align: center; /* Centra el título de la tarjeta */
+}
+
+.card-text {
+  text-align: left; /* Centra el texto de la tarjeta */
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Esto asegura que las tarjetas se estiren para ocupar el mismo espacio vertical */
+}
 /* Estilos específicos de secciones */
 #about img, .footer {
   width: 10%;
