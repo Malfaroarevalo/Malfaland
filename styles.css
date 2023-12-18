@@ -109,7 +109,7 @@ img, .carousel-inner img {
 }
 
 .navbar a:hover {
-  background-color: #61dafb; /* Color de fondo para hover */
+  background-color: #00acee; /* Color de fondo para hover */
   color: black; /* Color de texto para hover */
 }
 
@@ -247,3 +247,10 @@ body, a, button {
   @media (max-width: 480px) {
     /* Estilos para dispositivos aún más pequeños como teléfonos móviles */
   }
+
+  /* Estilos para responsividad */
+@media screen and (max-width: 768px) {
+  .navbar a {
+      font-size: 1rem;
+  }
+}
