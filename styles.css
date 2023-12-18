@@ -1,41 +1,68 @@
-/* Variables para los colores */
+
 :root {
-  --primary-color: #00c8ff;
-  --dark-color: #010722;
-  --light-color: #d0dae4;
-  --white-color: #fff;
+  --primary-color: #00acee; /* Azul estilo Twitter */
+  --accent-color: #ffd700; /* Amarillo neón para resaltar */
+  --background-color: #e6e6e6; /* Fondo claro para equilibrar */
+  --text-color: #333333; /* Texto oscuro para legibilidad */
+  --navbar-color: #292f33; /* Azul oscuro para la barra de navegación, estilo Twitter */
+  --button-color: #4c4c4c; /* Gris oscuro para botones, asegura visibilidad */
+}
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
 }
 
 /* Estilos generales y fuentes */
-body, h1, h2, h3, h4, h5, .btn {
+body, .btn {
+  background-color: var(--background-color);
+  color: var(--white-color);
   font-family: 'Retro', 'Roboto', sans-serif;
 }
 
-body {
-  background-color: var(--light-color);
-  color: var(--white-color);
-}
-
-h1, h2, h3, h4, h5, p, label {
-  color: var(--dark-color);
+h1 {
+  color: var(--text-color);
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
 }
 
 p {
+  color: var(--text-color);
+  font-family: 'Courier New', Courier, monospaces;
   text-align: left;
 }
 
-/* Layout y contenedores */
-.text-containers, .contact-form {
-  display: flex;
+h2 {
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
 }
 
-.text-container {
-  flex: 1;
-  padding: 20px;
+h3 {
+  color: var(--text-color);
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
 }
 
-.container {
-  margin-top: 20px;
+h4, h5, ul {
+  color: var(--text-color);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
+}
+.welcome-text {
+  font-family: 'Arial', sans-serif; /* Ejemplo de fuente para "Bienvenido a" */
+}
+
+.malfaland-text {
+  font-family: 'Retro', 'Roboto', sans-serif;  /* Ejemplo de fuente para "Malfaland" */
+  /* Puedes añadir más estilos aquí como tamaño, color, etc. */
 }
 
 /* Estilos para imágenes y carrusel */
@@ -54,18 +81,27 @@ img, .carousel-inner img {
   overflow: hidden;
 }
 
-/* Navbar y elementos interactivos */
+
+/* Estilos para la barra de navegación */
 .navbar {
-  background-color: var(--dark-color);
+  width: 100%;
+  color: var(--navbar-color);
 }
 
-.navbar-dark .navbar-brand,
-.navbar-dark .navbar-nav .nav-link,
-.navbar-dark .navbar-toggler-icon,
-.navbar-dark .navbar-toggler {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+/* Estilos específicos para los enlaces de la barra de navegación */
+.navbar a {
+  float: center;
+  color: #e0ebee; /* Color claro para los enlaces */
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
 }
+
+.navbar a:hover {
+  background-color: #61dafb; /* Color de fondo para hover */
+  color: black; /* Color de texto para hover */
+}
+
 
 /* Estilos para ModalForm */
 #contratacionModal, #contratacionModal .modal-content {
@@ -86,7 +122,7 @@ img, .carousel-inner img {
   border: 2px solid transparent;
   transition: border-color 0.3s ease-in-out;
   box-shadow: 0 2px 6px #ddd;
-  min-height: 25%; /* Ajusta este valor según sea necesario */
+  min-height: 35%; /* Ajusta este valor según sea necesario */
 }
 
 .card:hover {
@@ -192,3 +228,11 @@ body, a, button {
     padding: 15px;
   }
 }
+
+.footer {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #333; /* Fondo oscuro para el footer */
+  color: #e0ebee; /* Texto en color claro */
+  text-align: center;
+  }
