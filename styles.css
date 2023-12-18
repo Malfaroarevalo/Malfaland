@@ -32,7 +32,7 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
   border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
+  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
 
 }
 
@@ -48,7 +48,7 @@ h2 {
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
   
   border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
+  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
 }
 
 h3 {
@@ -57,7 +57,7 @@ h3 {
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
   
   border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
+  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
 }
 
 h4, h5, ul {
