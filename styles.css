@@ -180,14 +180,6 @@ img, .carousel-inner img {
   margin-bottom: 10px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.5rem;
-    font-size: .9rem;
-  }
-}
-
 @font-face {
   font-family: 'Retro';
   src: url('fonts/karma_Future.woff2') format('woff2');
@@ -235,4 +227,12 @@ body, a, button {
   background-color: #333; /* Fondo oscuro para el footer */
   color: #e0ebee; /* Texto en color claro */
   text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    /* Estilos para dispositivos más pequeños como tabletas */
+  }
+  
+  @media (max-width: 480px) {
+    /* Estilos para dispositivos aún más pequeños como teléfonos móviles */
   }
