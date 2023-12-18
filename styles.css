@@ -31,6 +31,9 @@ h1 {
   font-family: 'Times New Roman', Times, serif;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
+  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
+  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
+
 }
 
 p {
@@ -43,12 +46,18 @@ h2 {
   color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
+  
+  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
+  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
 }
 
 h3 {
   color: var(--text-color);
   font-family: 'Times New Roman', Times, serif;
   background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
+  
+  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
+  border-radius: 100px; /* Añade bordes redondeados si lo deseas */
 }
 
 h4, h5, ul {
@@ -74,6 +83,8 @@ img, .carousel-inner img {
 .image-container, .carousel {
   max-width: 600px;
   margin: 0 auto;
+  border: 5px solid #333; /* Cambia #333 a cualquier color que prefieras */
+  border-radius: 10px; /* Añade bordes redondeados si lo deseas */
 }
 
 .carousel-inner {
