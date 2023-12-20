@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -19,15 +18,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="services.html"><span class="malfaland-text">Servicio Técnico</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="pagemaker.html"><span class="malfaland-text">Documentos</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><span class="malfaland-text">Sobre mi</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicio Técnico</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="pagemaker.html">Documentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre mi</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="img/background.mp4" type="video/mp4">
+    </video>
     <!-- PDF Section -->
-    <div id="pdf-section" class="container mt-5">
+    <div id="card" class="container mt-5">
         <h2>Mis Documentos</h2>
         <p>Aquí puedes encontrar mis documentos PDF que actualizo regularmente:</p>
         <div class="row">
@@ -45,6 +47,9 @@
     </div>
     <!-- Agrega el script de Bootstrap al final del body -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Footer -->
+    <div class="footer">
+        © 2023 Manuel D. Alfaro Arévalo
+    </div>
 </body>
 </html>
