@@ -1,256 +1,117 @@
-
-:root {
-  --primary-color: #00acee; /* Azul estilo Twitter */
-  --accent-color: #ffd700; /* Amarillo neón para resaltar */
-  --background-color: #e6e6e6; /* Fondo claro para equilibrar */
-  --text-color: #333333; /* Texto oscuro para legibilidad */
-  --navbar-color: #292f33; /* Azul oscuro para la barra de navegación, estilo Twitter */
-  --button-color: #4c4c4c; /* Gris oscuro para botones, asegura visibilidad */
-}
-#video-background {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  background-size: cover;
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-/* Estilos generales y fuentes */
-body, .btn {
-  background-color: var(--background-color);
-  color: var(--white-color);
-  font-family: 'Retro', 'Roboto', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #333;
 }
 
-h1 {
-  color: var(--text-color);
-  font-family: 'Times New Roman', Times, serif;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
-  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
-
+.container {
+  max-width: 1000px;
 }
 
-p {
-  color: var(--text-color);
-  font-family: 'Courier New', Courier, monospaces;
-  text-align: left;
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-h2 {
-  color: var(--text-color);
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
-  
-  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 
-h3 {
-  color: var(--text-color);
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
-  
-  border: 1px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 15px; /* Añade bordes redondeados si lo deseas */
+/* Hero Section */
+.hero {
+  background-color: #fff;
+  padding: 80px 0;
 }
 
-h4, h5, ul {
-  color: var(--text-color);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: rgba(255, 255, 255, 0.5); /* blanco semi-transparente */
-}
-.welcome-text {
-  font-family: 'Arial', sans-serif; /* Ejemplo de fuente para "Bienvenido a" */
+.hero h1 {
+  font-size: 3.5rem;
 }
 
-.malfaland-text {
-  font-family: 'Retro', 'Roboto', sans-serif;  /* Ejemplo de fuente para "Malfaland" */
-  /* Puedes añadir más estilos aquí como tamaño, color, etc. */
+.hero h2 {
+  font-size: 2rem;
 }
 
-/* Estilos para imágenes y carrusel */
-img, .carousel-inner img {
-  max-width: 100%;
-  height: auto;
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-.image-container, .carousel {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 5px solid #333; /* Cambia #333 a cualquier color que prefieras */
-  border-radius: 10px; /* Añade bordes redondeados si lo deseas */
+/* Services Section */
+.services {
+  padding: 80px 0;
 }
 
-.carousel-inner {
-  height: 300px;
+.services .card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   overflow: hidden;
 }
 
-
-/* Estilos para la barra de navegación */
-.navbar {
-  width: 100%;
-  color: var(--navbar-color);
+.services .card img {
+  height: 200px;
+  object-fit: cover;
 }
 
-/* Estilos específicos para los enlaces de la barra de navegación */
-.navbar a {
-  float: center;
-  color: #e0ebee; /* Color claro para los enlaces */
-  text-decoration: none;
-  font-size: 17px;
-  text-align: center;
+/* About Section */
+.about {
+  background-color: #f8f8f8;
 }
 
-.navbar a:hover {
-  background-color: #00acee; /* Color de fondo para hover */
-  color: black; /* Color de texto para hover */
+.about img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
-
-/* Estilos para ModalForm */
-#contratacionModal, #contratacionModal .modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 70%;
-  max-width: 500px;
-  margin: auto;
-  border-radius: 5px;
-  padding: 20px;
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
 }
 
-/* Estilos para servicios y tarjetas */
-.card {
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease-in-out;
-  box-shadow: 0 2px 6px #ddd;
-  min-height: 35%; /* Ajusta este valor según sea necesario */
-}
-
-.card:hover {
-  border-color: #61dafb;
-}
-
-.card-img-top {
-  width: 100%; /* Ajusta la imagen al ancho del contenedor */
-  height: 200px; /* Altura fija para todas las imágenes */
-  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-  margin-bottom: 15px; /* Espacio entre la imagen y el texto debajo */
-
-}
-.card-title {
-  text-align: center; /* Centra el título de la tarjeta */
-}
-
-.card-text {
-  text-align: left; /* Centra el texto de la tarjeta */
-}
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch; /* Esto asegura que las tarjetas se estiren para ocupar el mismo espacio vertical */
-}
-/* Estilos específicos de secciones */
-#about img, .footer {
-  width: 10%;
-  height: 10%;
-  background-color: var(--dark-color);
-  color: var(--primary-color);
-  text-align: center;
-}
-
-/* Estilos reutilizables y formulario de contacto */
-.text-dark {
-  color: var(--dark-color);
-}
-
-.btn-primary, .contact-form input[type="submit"] {
-  background-color: var(--primary-color);
-  color: var(--dark-color);
-  border: 1px solid var(--dark-color);
-}
-
-.contact-form label, #contactForm label {
-  margin-bottom: 10px;
-}
-
-.contact-form input, .contact-form textarea, #contactForm input, #contactForm textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-}
-
-@font-face {
-  font-family: 'Retro';
-  src: url('fonts/karma_Future.woff2') format('woff2');
-}
-
-body, a, button {
-  cursor: url('img/icons8-cursor-35.png'), auto;
-}
-
-.icon-with-depth, .btn:hover, .icon-with-depth:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-.loading-animation {
+.footer ul li {
   display: inline-block;
-  width: 80px;
-  height: 80px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #61dafb;
-  animation: spin 1s ease-in-out infinite;
+  margin: 0 10px;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  #contratacionModal {
-    width: 90%;
+  .hero h1 {
+    font-size: 2.5rem;
   }
 
-  #contratacionForm {
-    max-width: 100%;
-    padding: 15px;
+  .hero h2 {
+    font-size: 1.5rem;
   }
 }
 
-.footer {
-  width: 100%;
-  padding: 1rem 0;
-  background-color: #333; /* Fondo oscuro para el footer */
-  color: #e0ebee; /* Texto en color claro */
-  text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    /* Estilos para dispositivos más pequeños como tabletas */
-  }
-  
-  @media (max-width: 480px) {
-    /* Estilos para dispositivos aún más pequeños como teléfonos móviles */
-  }
-
-  /* Estilos para responsividad */
-@media screen and (max-width: 768px) {
-  .navbar a {
-      font-size: 1rem;
-  }
+/* Special Styling for "Malfaland" text */
+.malfaland-text {
+  color: #007bff; /* Blue color */
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 4px #000000;
 }
