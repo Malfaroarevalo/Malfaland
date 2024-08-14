@@ -1,12 +1,14 @@
+      
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Coloca los mismos encabezados que en el index.html -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malfaland</title>
+    <title>Sobre mí - Malfaland</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="description" content="Conoce a Manuel D. Alfaro Arévalo, un profesional en desarrollo web y soporte técnico con amplia experiencia.">
+    <meta name="keywords" content="Manuel Alfaro, desarrollo web, soporte técnico, experiencia laboral, habilidades">
 </head>
 <body>
     <!-- Navbar -->
@@ -33,20 +35,85 @@
 
     <!-- Inicio body -->
     <div class="container mt-5">
-        <section id="about">
-            <div class="card-body">
-                <div class="text-center">
-                    <img src="img/profile.png" class="rounded-circle"> 
-                    <h1><span class="malfaland-text">Manuel D. Alfaro</span></h1>
-                    <h2>Desarrollador Web & Soporte Técnico</h2>
-                    <button class="btn btn-primary" type="button" style="margin-bottom:5px" onclick="contactar()">Contactar</button>
+        <section id="about" class="py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="img/profile.jpg" class="img-fluid rounded-circle shadow-lg" alt="Manuel D. Alfaro Arévalo">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-4"><span class="malfaland-text">Manuel D. Alfaro Arévalo</span></h1>
+                    <h2 class="mb-4">Desarrollador Web & Soporte Técnico</h2>
+                    <p>Soy un profesional apasionado por la tecnología con amplia experiencia en desarrollo web, soporte técnico y gestión de proyectos. Me especializo en brindar soluciones personalizadas y de alta calidad a mis clientes, siempre buscando la excelencia en cada proyecto.</p>
+                    <p>Mi experiencia abarca diversos campos, desde la logística de comercio exterior hasta la reparación de computadoras, lo que me ha permitido desarrollar una visión integral del sector tecnológico.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contactar</button>
                 </div>
             </div>
-            <!-- Modal Form -->
-            <div class="modal" id="contratacionModal" style="display: none;">
-                <div class="modal-body" >
-                    <div class="card mb-3">
-                        <h2 class="text-center mb-5"><span class="malfaland-text">Contratar Servicios</span></h2>
+        </section>
+
+        <section id="skills" class="py-5">
+            <h2 class="text-center mb-4">Habilidades y Experiencia</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Lenguajes de Programación y Desarrollo</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Java:</strong> Conocimientos introductorios, con habilidad para implementar algoritmos básicos y manejar interfaces gráficas simples.</li>
+                                <li class="list-group-item"><strong>C/C++:</strong> Fundamentos sólidos, preparado para expandir en aplicaciones más complejas y optimización de código.</li>
+                                <li class="list-group-item"><strong>Python:</strong> Entendimiento efectivo de sintaxis y estructuras de datos, con práctica en entornos de desarrollo interactivo.</li>
+                                <li class="list-group-item"><strong>Ruby on Rails:</strong> Familiaridad con el framework, con un enfoque inicial en patrones de diseño y desarrollo web ágil.</li>
+                                <li class="list-group-item"><strong>HTML/CSS/JavaScript:</strong> Habilidades aplicadas en la creación de interfaces web responsivas y lógica de programación front-end.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Experiencia Laboral</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Servicio técnico Independiente en Malfaland, Curicó:</strong> En esta etapa, me enfoqué en el servicio técnico, brindando 
+                                    asistencia y reparaciones de alta calidad para una amplia gama de dispositivos informáticos, asegurando la satisfacción y fidelidad de los clientes.</li>
+                                <li class="list-group-item"><strong>Servicio Postventa en Constructora Galilea, Curicó:</strong> Responsable de gestionar y asegurar la calidad del servicio 
+                                    postventa, me centré en garantizar la satisfacción del cliente y en mantener los estándares de servicio de la empresa.</li>
+                                <li class="list-group-item"><strong>Asistente Documental en El Cisne, Curicó:</strong> Mi rol consistió en administrar y organizar documentos importantes, 
+                                    asegurando la precisión y la eficiencia en el manejo de la información crítica de la empresa.</li>
+                                <li class="list-group-item"><strong>Auditor Nocturno en Hotel Radisson Curicó, Curicó:</strong> Esta posición me permitió desarrollar habilidades en auditoría 
+                                    y administración hotelera, asegurando la correcta gestión de las operaciones nocturnas del hotel.</li>
+                                <li class="list-group-item"><strong>Analista Documental en Copefrut, Curicó:</strong> Como analista, me dediqué a la evaluación y gestión de documentos, 
+                                    desempeñando un papel clave en el mantenimiento de la integridad y exactitud de la información empresarial.</li>
+                                <li class="list-group-item"><strong>Asistente Documental en Frule, Curicó:</strong> En esta función, me encargué de la gestión documental, apoyando en 
+                                    la organización y el procesamiento eficiente de la documentación empresarial.</li>
+                                <li class="list-group-item"><strong>Recepcionista en Hotel Raíces, Curicó:</strong> Como primer punto de contacto para los huéspedes, proporcioné un 
+                                    servicio excepcional, gestionando reservas y asegurando una experiencia acogedora y profesional.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Otras Habilidades y Certificaciones</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Desarrollo Móvil:</strong> Conocimientos básicos - Creación de aplicaciones móviles simples con funcionalidades de clima en tiempo real y geolocalización (Android)</li>
+                                <li class="list-group-item"><strong>Operaciones y Mantenimiento:</strong> Habilidades prácticas en la reparación y el mantenimiento de hardware de PC y laptops</li>
+                                <li class="list-group-item"><strong>Metodologías Ágiles y de Colaboración:</strong> Certificado en Fundamentos de Scrum - Comprensión de los principios de gestión de proyectos ágiles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Form -->
+        <div class="modal fade" id="contratacionModal" tabindex="-1" aria-labelledby="contratacionModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contratacionModalLabel"><span class="malfaland-text">Contratar Servicios</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
                         <form id="contratacionForm" action="https://formspree.io/f/xkndwnbw" method="POST">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
@@ -64,104 +131,15 @@
                                 <label for="message">Mensaje</label>
                                 <textarea class="form-control" id="message" name="message" placeholder="Ingrese su mensaje" required></textarea>
                             </div>
-                            <button type="button" class="btn btn-primary" onclick="openModal()"><span class="malfaland-text">Enviar</span></button>
-                            <button type="button" class="btn btn-secondary" id="closeModalButton" onclick="closeModal()"><span class="malfaland-text">Cerrar</span></button>
+                            <button type="submit" class="btn btn-primary"><span class="malfaland-text">Enviar</span></button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Lenguajes de Programación y Desarrollo</h4>
-                                <ul>
-                                    <li><strong>Java:</strong> Conocimientos introductorios, con habilidad para implementar algoritmos básicos y manejar interfaces gráficas simples.</li>
-                                    <li><strong>C/C++:</strong> Fundamentos sólidos, preparado para expandir en aplicaciones más complejas y optimización de código.</li>
-                                    <li><strong>Python:</strong> Entendimiento efectivo de sintaxis y estructuras de datos, con práctica en entornos de desarrollo interactivo.</li>
-                                    <li><strong>Ruby on Rails:</strong> Familiaridad con el framework, con un enfoque inicial en patrones de diseño y desarrollo web ágil.</li>
-                                    <li><strong>HTML/CSS/JavaScript:</strong> Habilidades aplicadas en la creación de interfaces web responsivas y lógica de programación front-end.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 order-md-1">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Experiencia Laboral</h4>
-                                <ul>
-                                    <li><strong>Servicio técnico Independiente en Malfaland, Curicó:</strong> En esta etapa, me enfoqué en el servicio técnico, brindando 
-                                    asistencia y reparaciones de alta calidad para una amplia gama de dispositivos informáticos, asegurando la satisfacción y fidelidad de los clientes.</li>
-                                    <li><strong>Servicio Postventa en Constructora Galilea, Curicó:</strong> Responsable de gestionar y asegurar la calidad del servicio 
-                                    postventa, me centré en garantizar la satisfacción del cliente y en mantener los estándares de servicio de la empresa.</li>
-                                    <li><strong>Asistente Documental en El Cisne, Curicó:</strong> Mi rol consistió en administrar y organizar documentos importantes, 
-                                    asegurando la precisión y la eficiencia en el manejo de la información crítica de la empresa.</li>
-                                    <li><strong>Auditor Nocturno en Hotel Radisson Curicó, Curicó:</strong> Esta posición me permitió desarrollar habilidades en auditoría 
-                                    y administración hotelera, asegurando la correcta gestión de las operaciones nocturnas del hotel.</li>
-                                    <li><strong>Analista Documental en Copefrut, Curicó:</strong> Como analista, me dediqué a la evaluación y gestión de documentos, 
-                                    desempeñando un papel clave en el mantenimiento de la integridad y exactitud de la información empresarial.</li>
-                                    <li><strong>Asistente Documental en Frule, Curicó:</strong> En esta función, me encargué de la gestión documental, apoyando en 
-                                    la organización y el procesamiento eficiente de la documentación empresarial.</li>
-                                    <li><strong>Recepcionista en Hotel Raíces, Curicó:</strong> Como primer punto de contacto para los huéspedes, proporcioné un 
-                                    servicio excepcional, gestionando reservas y asegurando una experiencia acogedora y profesional.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 order-md-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Desarrollo Móvil</h4>
-                                    <ul>
-                                        <li><strong>Android:</strong> Conocimientos básicos - Creación de aplicaciones móviles simples con funcionalidades de clima en tiempo real y geolocalización</li>
-                                    </ul>
-                                <h4 class="card-title">Operaciones y Mantenimiento</h4>
-                                    <ul>
-                                        <li><strong>Mantenimiento de Computadoras:</strong> Habilidades prácticas en la reparación y el mantenimiento de hardware de PC y laptops</li>
-                                    </ul>
-                                <h4 class="card-title">Metodologías Ágiles y de Colaboración</h4>
-                                    <ul>
-                                        <li><strong>Scrum:</strong> Certificado en Fundamentos de Scrum - Comprensión de los principios de gestión de proyectos ágiles</li>
-                                    </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+
     </div>
     <!-- Inicio Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        var contratarButtons = document.querySelectorAll('.btn.btn-primary');
-        contratarButtons.forEach(function(button) {
-        button.addEventListener('click', openModal);
-        });
-        var closeModalButton = document.getElementById('closeModalButton');
-        if (closeModalButton) {
-        closeModalButton.addEventListener('click', closeModal);
-        }
-        });
-        function openModal() {
-        console.log('Abriendo modal');
-        document.getElementById('contratacionModal').style.display = 'block';
-        }
-        function closeModal() {
-        console.log('Cerrando modal');
-        document.getElementById('contratacionModal').style.display = 'none';
-        }
-        function sendForm() {
-        alert("¡Gracias por tu interés en nuestros servicios!");
-        closeModal();
-        }
-    </script>
-    <script>
-        function toggleForm() {
-        var form = document.getElementById('contactForm');
-        form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Footer -->
@@ -170,3 +148,5 @@
     </div>
 </body>
 </html>
+
+    
