@@ -1,12 +1,14 @@
+      
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Coloca los mismos encabezados que en el index.html -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malfaland</title>
+    <title>Servicios - Malfaland</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="description" content="Descubre los servicios de tecnología que ofrece Malfaland: formateo de equipos, limpieza de virus, optimización de rendimiento, y más.">
+    <meta name="keywords" content="servicios tecnológicos, reparación de computadoras, formateo, limpieza de virus, optimización, soporte técnico">
 </head>
 <body>
     <!-- Navbar -->
@@ -28,248 +30,184 @@
     <video autoplay loop muted playsinline id="video-background">
         <source src="img/background.mp4" type="video/mp4">
     </video>
-    <!-- Contenido de la página de servicios -->
+
     <div class="container mt-5">
-        <section id="services">
-            <div class="container">
-            <h1 class="text-center mt-5"><span class="malfaland-text">Servicios</span></h1>
+        <section id="services" class="py-5">
+            <h1 class="text-center mb-5"><span class="malfaland-text">Servicios</span></h1>
+
             <div class="row">
-                <!-- Inicio tarjeta 1-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Formateado de Equipos</h3>
-                        <p class="card-text">
-                            Formateado y reinstalación de sistemas operativos. Backup previo de archivos.
-                        </p>
-                        <h4>$30.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
-                        </div>
-                    </div>
-                    </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 2-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                        <h3 class="card-title">Limpieza de Virus</h3>
-                        <p class="card-text">
-                            Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.
-                        </p>
-                        <h4>$25.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
-                        </div>
-                    </div>
-                    </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 3-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                        <h3 class="card-title">Optimización de Rendimiento</h3>
-                        <p class="card-text">
-                            Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.
-                        </p>
-                        <h4>$40.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Formateado de Equipos</h3>
+                            <p class="card-text">Formateado y reinstalación de sistemas operativos. Backup previo de archivos.</p>
+                            <h4 class="card-text text-center mb-3">$30.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 4-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Recuperación de Datos</h3>
-                        <p class="card-text">
-                            Recuperación de datos perdidos o eliminados accidentalmente.
-                        </p>  
-                        <h4>$50.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Limpieza de Virus</h3>
+                            <p class="card-text">Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.</p>
+                            <h4 class="card-text text-center mb-3">$25.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 5-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Configuración de Redes</h3>
-                        <p class="card-text">
-                            Instalación y configuración de redes para una conectividad estable.
-                        </p>  
-                        <h4>$35.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Optimización de Rendimiento</h3>
+                            <p class="card-text">Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.</p>
+                            <h4 class="card-text text-center mb-3">$40.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 6-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Mantenimiento Preventivo</h3>
-                        <p class="card-text">
-                            Servicio regular para prevenir problemas futuros y mantener el sistema en óptimas condiciones.
-                        </p>  
-                        <h4>$25.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Recuperación de Datos</h3>
+                            <p class="card-text">Recuperación de datos perdidos o eliminados accidentalmente.</p>
+                            <h4 class="card-text text-center mb-3">$50.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 7-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Asesoría en Seguridad Informática</h3>
-                        <p class="card-text">
-                            Evaluación y recomendaciones para mejorar la seguridad digital.
-                        </p>  
-                        <h4>$30.000.</h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Configuración de Redes</h3>
+                            <p class="card-text">Instalación y configuración de redes para una conectividad estable.</p>
+                            <h4 class="card-text text-center mb-3">$35.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 8-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Servicio de Copias de Seguridad Automáticas</h3>
-                        <p class="card-text">
-                            Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.
-                        </p>  
-                        <h4>$20.000 <p>Mensuales.</p></h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Mantenimiento Preventivo</h3>
+                            <p class="card-text">Servicio regular para prevenir problemas futuros y mantener el sistema en óptimas condiciones.</p>
+                            <h4 class="card-text text-center mb-3">$25.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 9-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 7 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Actualizaciones de Software y Controladores</h3>
-                        <p class="card-text">
-                            Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.
-                        </p>  
-                        <h4>$15.000 <p>por sesión.</p></h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Asesoría en Seguridad Informática</h3>
+                            <p class="card-text">Evaluación y recomendaciones para mejorar la seguridad digital.</p>
+                            <h4 class="card-text text-center mb-3">$30.000.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 10-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 8 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Configuración de Periféricos</h3>
-                        <p class="card-text">
-                            Instalación y configuración de impresoras, escáneres y otros periféricos.
-                        </p>  
-                        <h4>$25.000 <p>por dispositivo.</p></h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Servicio de Copias de Seguridad Automáticas</h3>
+                            <p class="card-text">Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.</p>
+                            <h4 class="card-text text-center mb-3">$20.000 <br>Mensuales.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 11-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 9 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Soporte Remoto Ilimitado</h3>
-                        <p class="card-text">
-                            Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.
-                        </p>  
-                        <h4>$40.000 <p>mensuales.</p></h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
+                            <h3 class="card-title">Actualizaciones de Software y Controladores</h3>
+                            <p class="card-text">Instalación y actualización de software y controladores para un funcionamiento óptimo.</p>
+                            <h4 class="card-text text-center mb-3">$15.000 <br>por sesión.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
                         </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
-                <!-- Inicio tarjeta 12-->
-                <div class="col-md-6">
-                    <div class="card mb-3">
+                <!-- Tarjeta 10 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
                         <div class="card-body">
-                        <h3 class="card-title">Sitio Web</h3>
-                        <p class="card-text">
-                            Instalación y configuración de Sitio Web según las necesidades del cliente.
-                        </p>  
-                        <h4>desde $90.000, <p>Variable según la complejidad.</p></h4>
-                        <button class="btn btn-primary" type="submit" onclick="contratar()"><span class="malfaland-text">Contratar</span></button>
-                    </div>
+                            <h3 class="card-title">Configuración de Periféricos</h3>
+                            <p class="card-text">Instalación y configuración de impresoras, escáneres y otros periféricos.</p>
+                            <h4 class="card-text text-center mb-3">$25.000 <br>por dispositivo.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Fin tarjeta -->
+                <!-- Tarjeta 11 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Soporte Remoto Ilimitado</h3>
+                            <p class="card-text">Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.</p>
+                            <h4 class="card-text text-center mb-3">$40.000 <br>mensuales.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 12 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Desarrollo Web</h3>
+                            <p class="card-text">Diseño y desarrollo de sitios web personalizados para tu negocio o proyecto.</p>
+                            <h4 class="card-text text-center mb-3">desde $90.000, <br>Variable según la complejidad.</h4>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contratacionModal">Contratar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Fin row -->
-            </div>
-            <!-- Fin container -->
         </section>
-    </div>
-    <!-- Fin cont.md5 -->
-    <!-- Modal Form -->
-    <div class="modal" id="contratacionModal" style="display: none;">
-        <div class="modal-body">
-            <div class="card mb-3">
-                <h2 class="text-center mb-5"><span class="malfaland-text">Contratar Servicios</span></h2>
-                <form id="contratacionForm" action="https://formspree.io/f/xkndwnbw" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" required>
+
+        <!-- Modal Form -->
+        <div class="modal fade" id="contratacionModal" tabindex="-1" aria-labelledby="contratacionModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contratacionModalLabel"><span class="malfaland-text">Contratar Servicios</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="form-group">
-                        <label for="emailForm">Correo electrónico</label>
-                        <input type="email" class="form-control" id="emailForm" name="email" placeholder="Ingrese su correo electrónico" required>
+                    <div class="modal-body">
+                        <form id="contratacionForm" action="https://formspree.io/f/xkndwnbw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailForm">Correo electrónico</label>
+                                <input type="email" class="form-control" id="emailForm" name="email" placeholder="Ingrese su correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Número de teléfono</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea class="form-control" id="message" name="message" placeholder="Ingrese su mensaje" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><span class="malfaland-text">Enviar</span></button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Número de teléfono</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea class="form-control" id="message" name="message" placeholder="Ingrese su mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><span class="malfaland-text">Enviar</span></button>
-                    <button type="button" class="btn btn-secondary" id="closeModalButton" onclick="closeModal()"><span class="malfaland-text">Cerrar</span></button>
-                </form>
+                </div>
             </div>
         </div>
+
     </div>
-    <!-- Fin modal form -->
+    <!-- Fin cont.md5 -->
     <!-- Inicio Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var contratarButtons = document.querySelectorAll('.btn.btn-primary');
-            contratarButtons.forEach(function(button) {
-                button.addEventListener('click', openModal);
-            });
-
-            var closeModalButton = document.getElementById('closeModalButton');
-            if (closeModalButton) {
-                closeModalButton.addEventListener('click', closeModal);
-            }
-        });
-
-        function openModal() {
-            console.log('Abriendo modal');
-            document.getElementById('contratacionModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            console.log('Cerrando modal');
-            document.getElementById('contratacionModal').style.display = 'none';
-        }
-
-        function sendForm() {
-            alert("¡Gracias por tu interés en nuestros servicios!");
-            closeModal();
-        }
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Fin scripts -->
 
     <!-- Footer -->
     <div class="footer">
@@ -277,3 +215,5 @@
     </div>
 </body>
 </html>
+
+    
