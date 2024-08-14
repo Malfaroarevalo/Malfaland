@@ -1,3 +1,4 @@
+      
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,157 +7,132 @@
     <title>Malfaland</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1Q27o42mYO+CGPsYc+w0lFJqUfqgK//7p  
+  <meta name="description" content="Servicios de tecnología para particulares y empresas. Desde reparación de equipos hasta desarrollo web.">
+  <meta name="keywords" content="reparación de computadoras, desarrollo web, servicio técnico, tecnología, Manuel Alfaro Arévalo">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><span class="malfaland-text">Malfaland</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="services.html">Servicio Técnico</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pagemaker.html">Documentos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre mi</a></li>
-                </ul>
-            </div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1><span class="malfaland-text">Malfaland</span></h1>
+          <h2>Soluciones tecnológicas a tu medida</h2>
+          <p>Explora nuestra gama de servicios y descubre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.</p>
+          <a href="#services" class="btn btn-primary">Ver Servicios</a>
         </div>
-    </nav>
-    <video autoplay loop muted playsinline id="video-background">
-        <source src="img/background.mp4" type="video/mp4">
-    </video>
-    <!-- Main content -->
-    <div class="container mt-5">
-        <!-- Hero Section -->
-        <div class="container" style="margin-bottom:1cm; text-align: center;">
-            <h1>Bienvenid@ a </span><span class="malfaland-text">Malfaland</span></h1>
-            <h2>Explora nuestra gama de servicios tecnológicos y soluciones innovadoras.</h2>
+        <div class="col-md-6">
+          <img src="img/hero-image.jpg" class="img-fluid" alt="Hero Image"> 
         </div>
-
-        <!-- Carousel -->
-        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-bottom:1cm">
-            <!-- Carousel content -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/image1.jpg" class="d-block w-100" alt="Servicio Técnico">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/image2.jpg" class="d-block w-100" alt="Desarrollo Web">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/image3.jpg" class="d-block w-100" alt="Consultoría IT">
-                </div>
-            </div>
-            <!-- Carousel controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <!-- Services Summary -->
-        <div class="container" style="margin-bottom:1cm; text-align: center;">
-            <h2>Manuel D. Alfaro Arévalo es un destacado profesional en el ámbito de la informática 
-                y un apasionado de la tecnología. Su amplia experiencia se extiende desde la 
-                especialización en logística de comercio exterior hasta el dinámico campo del 
-                desarrollo web y la reparación de computadoras, demostrando una versatilidad y 
-                profundidad de conocimientos en diversas áreas del sector tecnológico.
-            </h2>
-            <h2>Se ofrece una amplia gama de servicios tecnológicos para satisfacer tus necesidades.</h2>
-            </div>
-            <div class="row" style="margin-bottom:1cm">
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Formateado de Equipos.png" alt="Formateado y reinstalación de sistemas operativos." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Formateo de Equipos</h2>
-                            <p class="card-text">Formateado y reinstalación de sistemas operativos. Backup previo de archivos.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Limpieza de Virus.png" alt="Escaneo y desinfección profunda para eliminar virus." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Limpieza de Virus</h2>
-                            <p class="card-text">Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Optimización de Rendimiento.jpg" alt="Optimización de Rendimiento." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Optimización de Rendimiento</h2>
-                            <p class="card-text">Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Recuperación de Datos.jpg" alt="Recuperación de Datos." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Recuperación de Datos</h2>
-                            <p class="card-text">Recuperación de datos perdidos o eliminados accidentalmente.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Actualizaciones de Software y Controladores.jfif" alt="Actualizaciones de Software y Controladores." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Actualizaciones de Software y Controladores</h2>
-                            <p class="card-text">Configuración de sistemas automáticos de respaldo para garantizar la seguridad de la información.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Service Cards -->
-                <div class="col-md-4 mb-3" onclick="location.href='services.html';">
-                    <div class="card">
-                        <img src="img/Soporte Remoto Ilimitado.jpg" alt="Soporte Remoto Ilimitado." class="card-img-top img-fluid">
-                        <div class="card-body">
-                            <h2 class="card-title">Soporte Remoto Ilimitado</h2>
-                            <p class="card-text">Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other services -->
-                <!-- Limpieza de Virus, Optimización de Rendimiento, etc. -->
-            </div>
-        </div>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // JavaScript for clickable service cards
-        document.querySelectorAll('.services-summary .card').forEach(card => {
-            card.addEventListener('click', function() {
-                window.location.href = this.getAttribute('data-href');
-            });
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="text-center mb-5">Nuestros Servicios</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Formateado de Equipos.png" class="card-img-top" alt="Formateado de Equipos">
+            <div class="card-body">
+              <h5 class="card-title">Formateado y Reinstalación</h5>
+              <p class="card-text">Formateado y reinstalación de sistemas operativos. Backup previo de archivos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Limpieza de Virus.png" class="card-img-top" alt="Limpieza de Virus">
+            <div class="card-body">
+              <h5 class="card-title">Limpieza de Virus</h5>
+              <p class="card-text">Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Optimización de Rendimiento.jpg" class="card-img-top" alt="Optimización de Rendimiento">
+            <div class="card-body">
+              <h5 class="card-title">Optimización de Rendimiento</h5>
+              <p class="card-text">Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Recuperación de Datos.jpg" class="card-img-top" alt="Recuperación de Datos">
+            <div class="card-body">
+              <h5 class="card-title">Recuperación de Datos</h5>
+              <p class="card-text">Recuperación de datos perdidos o eliminados accidentalmente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Actualizaciones de Software y Controladores.jfif" class="card-img-top" alt="Actualizaciones de Software y Controladores">
+            <div class="card-body">
+              <h5 class="card-title">Actualizaciones de Software</h5>
+              <p class="card-text">Actualizaciones de software y controladores para un funcionamiento óptimo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/Soporte Remoto Ilimitado.jpg" class="card-img-top" alt="Soporte Remoto Ilimitado">
+            <div class="card-body">
+              <h5 class="card-title">Soporte Remoto</h5>
+              <p class="card-text">Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Sobre Nosotros</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="img/profile-picture.jpg" class="img-fluid rounded-circle" alt="Manuel Alfaro Arévalo">
+        </div>
+        <div class="col-md-6">
+          <p>Manuel D. Alfaro Arévalo es un destacado profesional en el ámbito de la informática y un apasionado de la tecnología. Su amplia experiencia se extiende desde la especialización en logística de comercio exterior hasta el dinámico campo del desarrollo web y la reparación de computadoras, demostrando una versatilidad y profundidad de conocimientos en diversas áreas del sector tecnológico. </p>
+          <p>Con un compromiso inquebrantable con la excelencia, Manuel se dedica a brindar soluciones tecnológicas innovadoras y personalizadas, adaptándose a las necesidades específicas de cada cliente. Su objetivo es hacer que la tecnología sea accesible y comprensible para todos, impulsando el crecimiento y el desarrollo en el entorno digital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5 py-3 bg-dark text-light text-center">
+    <div class="container">
+      <p>© 2023 Malfaland. Todos los derechos reservados.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // JavaScript for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Footer -->
-    <div class="footer">
-        © 2023 Manuel D. Alfaro Arévalo
-    </div>
+      });
+    });
+  </script>
 </body>
 </html>
