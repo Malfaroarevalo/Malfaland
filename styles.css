@@ -1,13 +1,13 @@
 /* General Styling */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #013220; /* Dark forest green */
+  color: #FFA500; /* Summer orange */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  color: #333;
+  color: #FFA500; /* Summer orange */
 }
 
 .container {
@@ -15,9 +15,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #FFA500; /* Summer orange */
   border: none;
-  color: #fff;
+  color: #013220; /* Dark forest green text */
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -30,12 +30,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #cc8400; /* Slightly darker orange */
 }
 
 /* Hero Section */
 .hero {
-  background-color: #fff;
+  background-color: #013220; /* Dark forest green */
   padding: 80px 0;
 }
 
@@ -58,6 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services .card {
+  background-color: #fff; /* White background for contrast */
+  color: #013220; /* Dark forest green text */
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -69,9 +71,18 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
 }
 
+.services .card .card-title {
+  color: #013220; /* Dark forest green */
+}
+
+.services .card .card-text {
+  color: #013220; /* Dark forest green */
+}
+
 /* About Section */
 .about {
-  background-color: #f8f8f8;
+  background-color: #013220; /* Dark forest green */
+  color: #FFA500; /* Summer orange */
 }
 
 .about img {
@@ -82,8 +93,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #013220; /* Dark forest green */
+  color: #FFA500; /* Summer orange */
   padding: 20px 0;
 }
 
@@ -93,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer ul li a {
-  color: #fff;
+  color: #FFA500; /* Summer orange */
   text-decoration: none;
 }
 
@@ -110,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Special Styling for "Malfaland" text */
 .malfaland-text {
-  color: #007bff; /* Blue color */
+  color: #FFA500; /* Summer orange */
   font-weight: bold;
   font-size: 1.2em;
   text-shadow: 2px 2px 4px #000000;
