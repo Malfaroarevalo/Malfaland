@@ -1,203 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuramos el tipo de caracteres para que soporte acentos y eñes -->
     <meta charset="UTF-8">
-    <!-- Hacemos que la página se vea bien en todos los dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título de la página -->
-    <title>Malfaland</title>
-    <!-- Enlazamos el CSS de Bootstrap para estilos bonitos y responsivos -->
+    <title>Malfaland - Soluciones Tecnológicas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Enlazamos nuestro propio archivo CSS para estilos personalizados -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <!-- Enlazamos Font Awesome para usar iconos geniales -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p8lC7H6V8f1JmQXlRZT1jEhgyURPjGrEDEOj2fzQS0T9I9rjo+N4juxnLPVADc8vcBLlM6cJCbfT7TpY85j8Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Descripción y palabras clave para que los buscadores nos encuentren -->
+    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Servicios de tecnología para particulares y empresas. Desde reparación de equipos hasta desarrollo web.">
     <meta name="keywords" content="reparación de computadoras, desarrollo web, servicio técnico, tecnología, Manuel Alfaro Arévalo">
-    <!-- Estilos adicionales para el fondo en movimiento -->
     <style>
-        /* Estilos para el fondo en movimiento en la sección principal */
-        .hero {
-            background: url('img/moving-background.jpg') repeat-x; /* Imagen que se repite horizontalmente */
-            background-size: cover; /* La imagen cubre todo el fondo */
-            animation: backgroundScroll 60s linear infinite; /* Animación para mover el fondo */
-            color: white; /* Texto en blanco para que se vea sobre el fondo */
+        /* Ajustes del video de fondo */
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
         }
 
-        /* Definimos la animación del fondo */
-        @keyframes backgroundScroll {
-            from { background-position: 0 0; } /* Comienza en posición inicial */
-            to { background-position: -10000px 0; } /* Se desplaza a la izquierda */
-        }
-
-        /* Estilos para el texto del nombre "Malfaland" */
+        /* Tonalidades de verde y ajustes generales */
         .malfaland-text {
-            color: #ff6600; /* Un color naranja brillante */
+            color: #228B22; /* Verde hoja */
+            font-weight: bold;
+        }
+
+        .navbar-dark {
+            background-color: #2E8B57; /* Verde selva */
+        }
+
+        .btn-primary {
+            background-color: #6B8E23; /* Verde olivo */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #556B2F; /* Verde bosque */
+        }
+
+        .card {
+            background-color: #F5F5F5;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: #2E8B57;
+            color: #FFFFFF;
         }
     </style>
 </head>
 <body>
-    <!-- Barra de navegación en la parte superior -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <!-- Nombre o logo de la empresa -->
-            <a class="navbar-brand" href="index.html"><span class="malfaland-text">Malfaland</span></a>
-            <!-- Botón para dispositivos móviles -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/malfalandlogo.png" alt="Malfaland Logo" width="30" height="30" class="d-inline-block align-text-top">
+                <span class="malfaland-text">Malfaland</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Enlaces del menú -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Enlace a Servicios -->
-                    <li class="nav-item"><a class="nav-link" href="#services">Servicio Técnico</a></li>
-                    <!-- Enlace a Documentos -->
-                    <li class="nav-item"><a class="nav-link" href="pagemaker.html">Documentos</a></li>
-                    <!-- Enlace a Sobre mí -->
-                    <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre mí</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Sección principal con el fondo en movimiento -->
-    <header class="hero">
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="img/background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Sección principal -->
+    <header class="hero text-center text-light py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Columna con el texto de bienvenida -->
-                <div class="col-md-6">
-                    <h1><span class="malfaland-text">Malfaland</span></h1>
-                    <h2>Soluciones tecnológicas a tu medida</h2>
-                    <p>Explora nuestra gama de servicios y descubre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.</p>
-                    <!-- Botón que lleva a la sección de servicios -->
-                    <a href="#services" class="btn btn-primary">Ver Servicios</a>
-                </div>
-                <!-- Columna con una imagen representativa -->
-                <div class="col-md-6">
-                    <img src="img/hero-image.jpg" class="img-fluid" alt="Imagen principal">
-                </div>
-            </div>
+            <img src="img/malfalandlogo2.png" alt="Malfaland Logo" width="50" height="50" class="d-inline-block align-text-top">
+            <h1 class="malfaland-text">Malfa</h1>
+            <h2>Soluciones Tecnológicas a tu Alcance</h2>
+            <p>Ofrecemos servicios personalizados en tecnología para satisfacer todas tus necesidades.</p>
+            <a href="#services" class="btn btn-primary">Ver Servicios</a>
         </div>
     </header>
 
     <!-- Sección de Servicios -->
-    <section id="services" class="services">
+    <section id="services" class="services py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Nuestros Servicios</h2>
-            <div class="row">
-                <!-- Tarjeta de servicio 1 -->
-                <div class="col-md-4 mb-4">
+            <h2 class="text-center malfaland-text mb-5">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="img/Formateado de Equipos.png" class="card-img-top" alt="Formateado de Equipos">
-                        <div class="card-body">
-                            <h5 class="card-title">Formateado y Reinstalación</h5>
-                            <p class="card-text">Formateado y reinstalación de sistemas operativos. Backup previo de archivos.</p>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Formateado de Equipos</h5>
+                            <p class="card-text">Backup previo y reinstalación de sistemas operativos.</p>
+                            <a href="services.html" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta de servicio 2 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="img/Limpieza de Virus.png" class="card-img-top" alt="Limpieza de Virus">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">Limpieza de Virus</h5>
-                            <p class="card-text">Escaneo y desinfección profunda para eliminar virus y mejorar rendimiento.</p>
+                            <p class="card-text">Eliminación de malware para un mejor rendimiento.</p>
+                            <a href="services.html" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta de servicio 3 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="img/Optimización de Rendimiento.jpg" class="card-img-top" alt="Optimización de Rendimiento">
-                        <div class="card-body">
-                            <h5 class="card-title">Optimización de Rendimiento</h5>
-                            <p class="card-text">Acelera y optimiza el rendimiento de equipos para un funcionamiento más eficiente.</p>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Optim. de Rendimiento</h5>
+                            <p class="card-text">Acelera y mejora la eficiencia de tus equipos.</p>
+                            <a href="services.html" class="btn btn-primary">Contratar</a>
                         </div>
                     </div>
-                </div>
-                <!-- Tarjeta de servicio 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="img/Recuperación de Datos.jpg" class="card-img-top" alt="Recuperación de Datos">
-                        <div class="card-body">
-                            <h5 class="card-title">Recuperación de Datos</h5>
-                            <p class="card-text">Recuperación de datos perdidos o eliminados accidentalmente.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta de servicio 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="img/Actualizaciones de Software y Controladores.jfif" class="card-img-top" alt="Actualizaciones de Software y Controladores">
-                        <div class="card-body">
-                            <h5 class="card-title">Actualizaciones de Software</h5>
-                            <p class="card-text">Actualizaciones de software y controladores para un funcionamiento óptimo.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tarjeta de servicio 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="img/Soporte Remoto Ilimitado.jpg" class="card-img-top" alt="Soporte Remoto Ilimitado">
-                        <div class="card-body">
-                            <h5 class="card-title">Soporte Remoto</h5>
-                            <p class="card-text">Asistencia técnica a distancia para resolver problemas de manera rápida y eficiente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección Sobre Nosotros -->
-    <section id="about" class="about py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Sobre Nosotros</h2>
-            <div class="row align-items-center">
-                <!-- Columna con imagen de perfil -->
-                <div class="col-md-6">
-                    <img src="img/profile-picture.jpg" class="img-fluid rounded-circle" alt="Manuel Alfaro Arévalo">
-                </div>
-                <!-- Columna con descripción -->
-                <div class="col-md-6">
-                    <p>Manuel D. Alfaro Arévalo es un destacado profesional en el ámbito de la informática y un apasionado de la tecnología...</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pie de página -->
-    <footer class="footer mt-5 py-3 bg-dark text-light text-center">
+    <footer class="footer text-center py-3">
         <div class="container">
-            <p>© 2023 Malfaland. Todos los derechos reservados.</p>
-            <!-- Lista de iconos de redes sociales -->
+            <p>&copy; 2023 Malfa & Malfaland. Todos los derechos reservados.</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="text-light">Facebook</a></li>
+                <li class="list-inline-item"><a href="#" class="text-light">Instagram</a></li>
+                <li class="list-inline-item"><a href="#" class="text-light">LinkedIn</a></li>
             </ul>
         </div>
     </footer>
 
-    <!-- Enlazamos el JavaScript de Bootstrap para funcionalidades interactivas -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Script para hacer que el desplazamiento sea suave al hacer clic en los enlaces -->
-    <script>
-        // Seleccionamos todos los enlaces que empiezan con #
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            // Agregamos un evento de clic a cada enlace
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault(); // Evitamos el comportamiento predeterminado
-                // Desplazamos suavemente hacia la sección correspondiente
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth' // Hacemos que el desplazamiento sea suave
-                });
-            });
-        });
-    </script>
 </body>
 </html>
