@@ -30,33 +30,6 @@ Visita [Malfaland](https://malfaroarevalo.github.io/Malfaland/).
 
 5. **(Opcional) Herramientas de Desarrollo Web en el Navegador**: La mayoría de los navegadores modernos incluyen herramientas de desarrollo web que pueden ser útiles para depurar y probar el sitio web.
 
-### Pasos de Instalación
-
-1. **Clonar el Repositorio**
-
-   - Abre la terminal o la línea de comandos en tu computadora.
-   - Utiliza el comando `git clone` seguido de la URL del repositorio. Por ejemplo:
-     - `git clone https://github.com/malfaroarevalo/Malfaland.git`
-   - Esto creará una copia local del proyecto en tu máquina.
-
-2. **Abrir el Proyecto**
-
-   - Navega hasta la carpeta del proyecto clonado.
-   - Abre los archivos del proyecto (HTML, CSS, JavaScript) en tu editor de código preferido.
-
-3. **Visualizar el Proyecto**
-
-   - Para ver el sitio web, simplemente abre el archivo `index.html` en tu navegador web.
-   - Puedes hacerlo haciendo doble clic en el archivo o arrastrándolo a tu navegador.
-4. **Modificar y Experimentar**
-
-   - Siéntete libre de modificar los archivos y experimentar con el código.
-   - Puedes ver los cambios reflejados en tiempo real recargando la página en tu navegador.
-
-5. **Actualizar el Repositorio (opcional)**
-
-   - Si deseas contribuir al proyecto, realiza tus cambios y luego usa `git commit` para confirmarlos.
-   - Después, puedes subir los cambios a GitHub con `git push` si tienes permisos de escritura en el repositorio.
 
 ## Uso
 
@@ -130,17 +103,6 @@ Esta licencia no tiene restricciones significativas, lo que significa que puedes
 
 Para más detalles, lee el archivo [LICENSE](LICENSE.md) incluido en este repositorio.
 
-## Contacto
-
-Si deseas obtener más información sobre Malfaland, discutir posibilidades de colaboración o simplemente hacer una pregunta, aquí tienes algunas formas de ponerte en contacto:
-
-- **Abre un Issue en GitHub**: Para preguntas generales o discusiones relacionadas con el proyecto, considera abrir un [issue en el repositorio de Malfaland](https://github.com/malfaroarevalo/Malfaland/issues).
-
-- **Solicitudes de Pull**: Si tienes mejoras específicas o correcciones para proponer, siéntete libre de enviar un [pull request](https://github.com/malfaroarevalo/Malfaland/pulls).
-
-- **Redes Sociales o Plataformas Profesionales**: Puedes seguirme o contactarme a través de plataformas profesionales o redes sociales. [LinkedIn de Manuel Alfaro](https://www.linkedin.com/in/malfaroarevalo/).
-
-¡Tus comentarios e ideas son siempre bienvenidos!
 
 ## Estado del Proyecto
 
