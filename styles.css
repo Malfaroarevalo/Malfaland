@@ -1,23 +1,25 @@
 /* General Styling */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #013220; /* Dark forest green */
-  color: #FFA500; /* Summer orange */
+  background-color: #013220;
+  color: #FFA500;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  color: #FFA500; /* Summer orange */
+  color: #FFA500;
 }
 
 .container {
   max-width: 1000px;
 }
 
+/* Button Styles */
 .btn-primary {
-  background-color: #FFA500; /* Summer orange */
+  background-color: #FFA500;
   border: none;
-  color: #013220; /* Dark forest green text */
+  color: #013220;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -26,30 +28,52 @@ h1, h2, h3, h4, h5, h6 {
   margin: 4px 2px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #cc8400; /* Slightly darker orange */
+  background-color: #cc8400;
+  transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-  background-color: #013220; /* Dark forest green */
+  background-color: #013220;
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(1, 50, 32, 0.9), rgba(1, 50, 32, 0.7));
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 3.5rem;
+  animation: fadeInUp 1s ease;
 }
 
 .hero h2 {
   font-size: 2rem;
+  animation: fadeInUp 1s ease 0.2s;
 }
 
 .hero p {
   font-size: 1.2rem;
   line-height: 1.6;
+  animation: fadeInUp 1s ease 0.4s;
 }
 
 /* Services Section */
@@ -58,54 +82,106 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services .card {
-  background-color: #fff; /* White background for contrast */
-  color: #013220; /* Dark forest green text */
+  background-color: #fff;
+  color: #013220;
   border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .services .card img {
   height: 200px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.services .card .card-title {
-  color: #013220; /* Dark forest green */
+.services .card:hover img {
+  transform: scale(1.05);
 }
 
-.services .card .card-text {
-  color: #013220; /* Dark forest green */
+/* Loading Spinner */
+.spinner {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #FFA500;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-/* About Section */
-.about {
-  background-color: #013220; /* Dark forest green */
-  color: #FFA500; /* Summer orange */
-}
-
-.about img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Footer */
-.footer {
-  background-color: #013220; /* Dark forest green */
-  color: #FFA500; /* Summer orange */
-  padding: 20px 0;
-}
-
-.footer ul li {
+.spinner.active {
   display: inline-block;
-  margin: 0 10px;
 }
 
-.footer ul li a {
-  color: #FFA500; /* Summer orange */
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #FFA500;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #013220;
   text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  background-color: #001a10;
+  color: #FFB52E;
+}
+
+[data-theme="dark"] .card {
+  background-color: #002816;
+  color: #FFB52E;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Accessibility Improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /* Responsive Design */
@@ -117,12 +193,9 @@ h1, h2, h3, h4, h5, h6 {
   .hero h2 {
     font-size: 1.5rem;
   }
-}
-
-/* Special Styling for "Malfaland" text */
-.malfaland-text {
-  color: #FFA500; /* Summer orange */
-  font-weight: bold;
-  font-size: 1.2em;
-  text-shadow: 2px 2px 4px #000000;
+  
+  .back-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
 }
